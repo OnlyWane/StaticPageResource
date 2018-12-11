@@ -1,0 +1,270 @@
+/* 清除 */
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,dl,dt,dd,input{margin: 0;padding: 0;}
+img{border: none;}
+li{list-style: none;}
+input,select,textarea{outline: none;border:none;background:none;}
+textarea{resize: none;}
+a{text-decoration: none;color: #656565;}
+table {border-collapse: collapse; border-spacing: 0;margin: 0;padding: 0;border: 0;}
+body{
+    background-color: #101631;
+    line-height: 1;
+}
+.container{
+    width: 100%;
+    padding: 0;
+    font-family: "PingFangSC-Regular","Mircosoft YaHei","微软雅黑";
+}
+.header{
+    line-height: 84px;
+    background-color: #232841;
+    color: #fff;
+    font-size: 24px;
+    font-weight: normal;
+    overflow: hidden;
+}
+.hr_2{
+    height: 2px;
+    background: linear-gradient(to right, #177BF4, #6472FF);
+}
+.header_left{
+    padding-left: 40px;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+.header_left h3{
+    font-size: 30px;
+    line-height: 84px;
+}
+.logo{
+    width: 53px;
+    height: 53px;
+    background: url(../image/logo.png) center center no-repeat;
+    background-size: cover;
+    margin-right: 14px;
+    margin-top: 8px;
+}
+.header_right{
+    float: right;
+    padding-right: 20px;
+}
+.header_right span{
+    display: inline-block;
+    margin-right: 10px;
+}
+.content{
+    width: 1888px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+h4{
+    font-size: 22.5px;
+    line-height: 22.5px;
+    padding-top: 18px;
+    color: #ffffff;
+    padding-left: 22px;
+    font-weight: lighter;
+    position: relative;
+    display: inline-block;
+}
+.top{
+    margin: 15px 0;
+    overflow: hidden;
+}
+.top_left{
+    width: 550px;
+    height: 321px;
+    float: left;
+    margin-right: 15px;   
+    background: #232841;
+    border-radius: 8px;
+    font-size: 24px;
+    color: #D7D8DC;
+    font-size: 21px;
+}
+.account{
+    float: left;
+    margin-right: 15px; 
+    margin-left: 20px; 
+}
+.top_left h4{
+    margin-bottom: 18px;
+    padding-left: 0;
+}
+.account_item{
+    background: #393D54;
+    border-radius: 4px 4px 0 0;
+    width: 247px;
+    height: 122px;
+}
+.account_item p{
+    padding-left: 20px;
+    line-height: 40px;
+}
+.account_item:last-child{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 3px;
+    border-radius: 0 0 4px 4px;
+}
+.balance{
+    font-size: 40px;
+    color: #CE8269;
+    line-height: 40px; 
+    padding-top: 24px;
+    font-weight: bold;
+}
+.top_left .number{
+    font-size: 30px;
+    color: #FFFFFF;
+ 
+    margin-left: 27px;
+    margin-bottom: 10px;
+}
+.income{
+    float: left;
+}
+.flex_box{
+    background: #393D54;
+    border-radius: 4px;
+    width: 247px;
+    height: 173px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 36px 0;
+}
+.flex_box p{
+    padding-left: 25px;
+}
+.up{
+    font-size: 30px;
+    color: #CA5A5A; 
+    margin-left: 5px;
+}
+.top_right{
+    width: 1323px;
+    height: 321px;
+    background: #232841;
+    border-radius: 8px;
+    float: right;
+}
+.bar_cont{
+    margin-top: 16px;
+    margin-left: 40px;
+    overflow: hidden;
+}
+.bar_item{
+    width: 420px;
+    float: left;
+    position: relative;
+}
+.bottom{
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+.bottom_left{
+    width: 550px;
+    height: 633px;
+    float: left;
+    margin-right: 15px;   
+    background: #232841;
+    border-radius: 8px;
+}
+.new_pro{
+    overflow: hidden;
+    position: relative;
+    width: 550px;
+    height: 310px;
+}
+.new_price{
+    width: 550px;
+    height: 300px;
+    position: relative;
+}
+.new_price h5{
+    padding-left: 24px; 
+}
+.bottom_right{
+    float: right;
+}
+.bottom_right_small{
+    width: 1323px;
+    height: 284px;
+    background: #232841;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    position: relative;
+}
+.bottom_right_big{
+    width: 1323px;
+    height: 335px;
+    background: #232841;
+    border-radius: 8px;
+    position: relative;
+}
+.to{
+    position: absolute;
+    width: 35px;
+    height: 11px;
+    top: 175px;
+    left: 174px;
+    background: url(../image/to.png) center center no-repeat;
+    background-size: cover;
+}
+.chart_h4{
+    position: absolute;
+    top: 24px;
+    left: 22px;
+    padding: 0;
+}
+h5{
+    font-size: 21px;
+    color: #FFFFFF;
+    position: absolute;
+    padding: 0;
+    font-weight: lighter;
+}
+#areaBar{
+    width: 360px;
+    height: 260px;
+
+}
+#cityBar{
+    width: 360px;
+    height: 260px;
+}
+#kindBar{
+    width: 360px;
+    height: 260px;
+}
+#comparePie{
+    width: 210px;
+    height: 264px;
+    float: left;
+}
+#newPie{
+    width: 340px;
+    height: 264px; 
+    float: right;
+}
+#priceTendencyLine{
+    width: 1300px;
+    height: 260px;
+    padding-left: 22px;
+    padding-top: 18px;
+}
+#taskTendencyBar{
+    width: 1300px;
+    height: 310px;
+    padding-left: 22px;
+    padding-top: 18px;
+}
+#pirceBar{
+    width: 530px;
+    height: 340px;
+    padding-top: 18px;
+}

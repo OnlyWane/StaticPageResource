@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+	<head lang="en">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta charset="utf-8">
+		<title>全渠道数字化</title>
+		<script>
+		var setPro = 1;
+        (function(doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function() {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    setPro = clientWidth / 960;
+                    docEl.style.fontSize = 10 * (clientWidth / 960) + 'px';
+                };
+                recalc();
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+		</script>
+		<link rel="stylesheet" type="text/css" href="css/digital.css">
+		<link rel="stylesheet" type="text/css" href="css/digital2.css">
+	</head>
+	<div class="container" id="app">
+		<div class="header">
+			<div class="head-logo"></div>
+			<h3 class="header-left">全渠道数字化运营看板</h3>
+			<div class="header_right">
+                <span id="date"></span><span id="time"></span>
+            </div>
+		</div>
+		<div class="content clearFix">
+			<div class="left ">
+				<div class="left-top">
+					<p class="item-title one-line">累计会员量</p>
+					<div id="left-one">
+
+					</div>
+				</div>
+				<div class="left-center">
+					<p class="item-title one-line">会员数字化趋势</p>
+					<div id="left-two">
+
+					</div>
+				</div>
+				<div class="left-bottom">
+					<p class="item-title one-line">年龄分布</p>
+					<div id="left-three">
+
+					</div>
+				</div>
+			</div>
+			<div class="center ">
+				<div class="center-top">
+					<div class="chart-map" id="map-zoomData">
+					</div>
+				</div>
+				<div class="center-bottom">
+					<div id="center-two">
+						<p class="item-title one-line">地区会员购买力排行榜</p>
+						<ul class="table-efficient">
+							<div class="table-head">
+								<p class="head-cell-one">排行</p>
+								<p class="cell-two">地区</p>
+								<p class="cell-three"></p>
+								<p class="cell-four">类别</p>
+								<p class="cell-five">类别</p>
+								<p class="cell-six">总金额</p>
+							</div>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="right ">
+				<div class="right-top">
+					<p class="item-title one-line">身份职业</p>
+					<div id="right-one">
+
+					</div>
+				</div>
+				<div class="right-center">
+					<p class="item-title one-line">受教育程度</p>
+					<div class="r-center">
+						<div class="r-scroll" style="margin-top:25px;">
+							<ul>
+								<li class="p-boy">
+									<span class="lab1">工作8年</span>
+									<span class="lab2">公务员</span>
+									<span class="lab3">已婚</span>
+									<span class="lab4">周晓明</span>
+									<span class="lab5">省钱</span>
+									<span class="lab6">数码控</span>
+									<span class="lab7">男性</span>
+									<span class="lab8">健身达人</span>
+									<span class="lab9">游戏迷</span>
+									<img src="./img/boy.png"/>
+								</li>
+								<li class="p-girl">
+									<span class="lab1">未婚</span>
+									<span class="lab2">90后</span>
+									<span class="lab3">杨乐</span>
+									<span class="lab4">23岁</span>
+									<span class="lab5">女性</span>
+									<span class="lab6">大学本科</span>
+									<span class="lab7">喜剧</span>
+									<img src="./img/girl.png" />
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="right-bottom">
+					<p class="item-title one-line">受教育程度</p>
+					<div id="right-three">
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<body>
+	</body>
+
+	<script type="text/javascript" src="./js/jquery.min.js"></script>
+	<script type="text/javascript" src="./js/jquery.imgscroll.min.js"></script>
+	<script type="text/javascript" src="./js/echarts.min.js"></script>
+	<script type="text/javascript" src="./js/china.js"></script>
+	<script type="text/javascript" src="./js/mapOption.js"></script>
+	<script type="text/javascript" src="./js/barAndPie2.js"></script>
+	<!-- <script type="text/javascript" src="./js/vue.min.js"></script> -->
+	<!-- <script type="text/javascript" src="./js/instrument.js"></script> -->
+	<script type="text/javascript">
+	function timeController() {
+			function _paddNum(num){
+			  num += "";
+			  return num.replace(/^(\d)$/,"0$1");
+			}
+
+			function _time() {
+				clearTimeout(timer);//清除定时器
+				date = new Date()
+				var cfg = {
+				   yyyy : date.getFullYear() //年 : 4位
+				  ,MM : _paddNum(date.getMonth() + 1) //月 : 如果1位的时候补0
+				  ,dd : _paddNum(date.getDate())//日 : 如果1位的时候补0
+				  ,hh : _paddNum(date.getHours())  //时
+				  ,mm : _paddNum(date.getMinutes()) //分
+				  ,ss : _paddNum(date.getSeconds()) //秒
+				}
+				$('.time_head').text('最近数据更新时间：');
+				$('#date').text(cfg.yyyy+"-"+cfg.MM+"-"+cfg.dd)
+				$("#time").text(cfg.hh+":"+cfg.mm+":"+cfg.ss)
+				timer = setTimeout(_time,1000); //设定定时器，循环运行
+			}
+
+			var timer = setTimeout(_time,100);
+		}
+	timeController();
+	</script>
+</html>

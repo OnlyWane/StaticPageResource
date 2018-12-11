@@ -1,0 +1,68 @@
+{
+  "company": {
+    "totalAmount": 9685541,
+    "totalCount": 39560
+  },
+
+  "qingti": {
+    "totalAmount": 28610,
+    "totalCount": 169
+  },
+
+  "payWays": {
+    "cash": 677987.87,
+    "unionPay": 1840252.79,
+    "member": 3971071.81,
+    "wechat": 1549686.56,
+    "aliPay": 871698.69,
+    "quickDiscount": 484277.05,
+    "onAccount": 290566.23
+  },
+  
+  "member": {
+    "total": 12620,
+    "new": 32,
+    "deposit": 26103
+  },
+
+  "eatWays": {
+    "eatIn": 96,
+    "takeOut": 50,
+    "delivery": 21
+  },
+
+  "shops":
+  [
+    {"name":"清媞金蝶软件园店","wechatCount":"51","aliPayCount":"29","cashCount":"6","unionPayCount":"20","wechatAmount":"14,681 ","aliPayAmount":"8,517 ","cashAmount":"3,657 ","unionPayAmount":"7,897 ","tradeCount":"106 ","deliveryCount":"36","deliveryAmount":"1057","orderInWechat":"36 ","orderInSpot":"70 ","amountPerDay":35809,"memberCost":"26,891 ","eatInCount":921},
+    {"name":"清媞海岸城店","wechatCount":"63","aliPayCount":"34","cashCount":"10","unionPayCount":"13","wechatAmount":"26,892 ","aliPayAmount":"14,236 ","cashAmount":"3,216 ","unionPayAmount":"9,645 ","tradeCount":"120 ","deliveryCount":"50","deliveryAmount":"3712","orderInWechat":"58 ","orderInSpot":"62 ","amountPerDay":57701,"memberCost":"42,163 ","eatInCount":1036},
+    {"name":"清媞京基100店","wechatCount":"21","aliPayCount":"12","cashCount":"36","unionPayCount":"25","wechatAmount":"9,687 ","aliPayAmount":"6,912 ","cashAmount":"18,912 ","unionPayAmount":"13,681 ","tradeCount":"94 ","deliveryCount":"67","deliveryAmount":"7651","orderInWechat":"27 ","orderInSpot":"67 ","amountPerDay":56843,"memberCost":"46,201 ","eatInCount":620},
+    {"name":"清媞科技园店","wechatCount":"43","aliPayCount":"20","cashCount":"5","unionPayCount":"42","wechatAmount":"13,621 ","aliPayAmount":"5,236 ","cashAmount":"1,320 ","unionPayAmount":"15,681 ","tradeCount":"110 ","deliveryCount":"49","deliveryAmount":"2601","orderInWechat":"63 ","orderInSpot":"47 ","amountPerDay":38459,"memberCost":"21,036 ","eatInCount":987},
+    {"name":"清媞九方店","wechatCount":"30","aliPayCount":"16","cashCount":"30","unionPayCount":"41","wechatAmount":"5,890 ","aliPayAmount":"3,691 ","cashAmount":"6,341 ","unionPayAmount":"14,621 ","tradeCount":"117 ","deliveryCount":"80","deliveryAmount":"7632","orderInWechat":"10 ","orderInSpot":"107 ","amountPerDay":38175,"memberCost":"20,437 ","eatInCount":1120},
+    {"name":"清媞天河城店","wechatCount":"26","aliPayCount":"9","cashCount":"23","unionPayCount":"29","wechatAmount":"13,460 ","aliPayAmount":"5,613 ","cashAmount":"12,410 ","unionPayAmount":"19,561 ","tradeCount":"87 ","deliveryCount":"71","deliveryAmount":"4263","orderInWechat":"57 ","orderInSpot":"30 ","amountPerDay":55307,"memberCost":"46,951 ","eatInCount":631},
+    {"name":"清媞书城店","wechatCount":"16","aliPayCount":"10","cashCount":"26","unionPayCount":"46","wechatAmount":"3,941 ","aliPayAmount":"2,891 ","cashAmount":"8,741 ","unionPayAmount":"17,951 ","tradeCount":"98 ","deliveryCount":"87","deliveryAmount":"8541","orderInWechat":"36 ","orderInSpot":"62 ","amountPerDay":42065,"memberCost":"34,715 ","eatInCount":672},
+    {"name":"清媞正佳店","wechatCount":"30","aliPayCount":"17","cashCount":"32","unionPayCount":"72","wechatAmount":"6,987 ","aliPayAmount":"4,692 ","cashAmount":"7,643 ","unionPayAmount":"23,417 ","tradeCount":"151 ","deliveryCount":"56","deliveryAmount":"6925","orderInWechat":"85 ","orderInSpot":"66 ","amountPerDay":49664,"memberCost":"41,251 ","eatInCount":1351},
+    {"name":"清媞ICO店","wechatCount":"27","aliPayCount":"20","cashCount":"12","unionPayCount":"17","wechatAmount":"8,941 ","aliPayAmount":"7,621 ","cashAmount":"4,150 ","unionPayAmount":"9,043 ","tradeCount":"76 ","deliveryCount":"28","deliveryAmount":"2611","orderInWechat":"34 ","orderInSpot":"42 ","amountPerDay":32366,"memberCost":"23,851 ","eatInCount":587},
+    {"name":"清媞体育馆店","wechatCount":"42","aliPayCount":"19","cashCount":"19","unionPayCount":"33","wechatAmount":"10,243 ","aliPayAmount":"8,127 ","cashAmount":"7,269 ","unionPayAmount":"12,469 ","tradeCount":"113 ","deliveryCount":"42","deliveryAmount":"3124","orderInWechat":"28 ","orderInSpot":"85 ","amountPerDay":41232,"memberCost":"30,274 ","eatInCount":1106}
+  ],
+
+  "deliveryPlatforms": {
+    "baidu": 2062,
+    "eleme": 1526,
+    "meituan": 1105,
+    "koubei": 896,
+    "others": 310
+  },
+
+  "manCount": 758,
+  "womanCount": 963,
+  "costPerPerson": 98,
+
+  "shopExceptions":
+  [
+    {"name":"反诘","amount":"1026","count":"12"},
+    {"name":"招待","amount":"1263","count":"10"},
+    {"name":"免单","amount":"681","count":"8"},
+    {"name":"整单取消","amount":"980","count":"6"}
+  ]
+  
+}

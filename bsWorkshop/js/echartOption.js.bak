@@ -1,0 +1,354 @@
+/*备料及时率*/
+var lineOption = {
+    tooltip: {
+        trigger: 'axis'
+    },
+    grid: {
+        left: '2%',
+        top: '16%',
+        width: '88%',
+        height: '76%',
+        containLabel: true
+    },
+    xAxis: {
+        type: 'category',
+        splitLine: {
+            show: true,
+            lineStyle:{
+                color: '#2A334F',
+                width: 2
+            }
+        },
+        data: ['1102', '1103', '1104', '1105', '1106', '1107', '1108'],
+        axisTick:{
+            show: false
+        },
+        axisLine: {
+            lineStyle: {
+                color: '#3F5476',
+                width: 2
+            }
+        },
+        axisLabel: {
+            margin: 10,
+            textStyle: {
+                color: 'white',//坐标值得具体的颜色
+                fontSize: 15
+            }
+        }
+    },
+    yAxis: {
+        type: 'value',
+        min: 80,
+        max: 100,
+        interval: 4,
+        splitLine: {
+            show: true,
+            lineStyle:{
+                color: '#2A334F',
+                width:　 1
+            }
+        },
+        axisTick:{
+            show: false
+        },
+        axisLine: {
+            lineStyle: {
+                color: '#3F5476',
+                width: 2
+            }
+        },
+        axisLabel: {
+            margin: 10,
+            formatter: '{value}%',
+            textStyle: {
+                color: 'white',//坐标值得具体的颜色
+                fontSize: 15  
+            }
+
+        }
+    },
+    series: [
+        {
+            type:'line',
+            /*smooth: true,*/
+            symbol:'none',
+            itemStyle : {  
+                normal : {  
+                    lineStyle:{  
+                        color:'#188df0',
+                        width: 2 
+                    }  
+                }  
+            },  
+            data:[85, 94, 90, 80, 90, 85,92]
+        }
+    ]
+};
+/*车间资源率分析*/
+var analysisBarOption = {
+    barWidth: '14px',
+    grid: {
+        show: true,
+        height : '77%',
+        width: '88%',
+        x: '3%',
+        y: '16%',
+        containLabel: true,
+        borderWidth: 0
+    },
+    xAxis: {
+        type: 'category',
+        splitLine: {
+            show: true,
+            lineStyle:{
+                color: '#2A334F',
+                width: 2
+            }
+        },
+        data: ["电机1线","电机2线","电机3线","电机4线","电机5线","电机6线"],
+        axisTick:{
+            show: false
+        },
+        axisLine: {
+            lineStyle: {
+                color: '#3F5476',
+                width: 2
+            }
+        },
+        axisLabel: {
+            margin: 10,
+            textStyle: {
+                color: 'white',//坐标值得具体的颜色
+                fontSize: 15
+            }
+        }
+    },
+    yAxis: {
+        type: 'value',
+        min: 80,
+        max: 100,
+        interval: 4,
+        splitLine: {
+            show: true,
+            lineStyle:{
+                color: '#2A334F',
+                width:　 1
+            }
+        },
+        axisTick:{
+            show: false
+        },
+        axisLine: {
+            lineStyle: {
+                color: '#3F5476',
+                width: 2
+            }
+        },
+        axisLabel: {
+            margin: 10,
+            textStyle: {
+                color: 'white',//坐标值得具体的颜色
+                fontSize: 15  
+            }
+
+        }
+    },
+    series: [
+    {
+        type: 'bar',
+        itemStyle: {
+            normal: {
+                color:'#44647a',
+                 barBorderRadius: [3, 3, 0, 0]
+            }
+        },
+        barGap: '0%',
+        data: [89, 89, 97, 93, 91, 94]
+    },
+    {
+        type: 'bar',
+        barGap: '0%',
+        itemStyle: {
+            normal: {
+                color:'#d48265',
+                barBorderRadius: [3, 3, 0, 0]
+            }
+        },
+        data: [91, 86, 92, 90, 88, 88]
+       
+    },
+    {
+        type: 'bar',
+        itemStyle: {
+            normal: {
+                color:'#61a0a8',
+                barBorderRadius: [3, 3, 0, 0]
+            }
+        },
+        barGap: '0%',
+        data: [81, 85, 89, 84, 80, 83]
+
+    },
+    ]
+};
+/*异常趋势*/
+var tendencyBarOption = {
+    barWidth: '16px',
+    grid: {
+        show: true,
+        height : '60%',
+        width: '79%',
+        x: '4%',
+        y: '13%',
+        containLabel: true,
+        borderWidth: 0
+    },
+    xAxis: {
+        type: 'category',
+        splitLine: {
+            show: false,
+            lineStyle:{
+                color: '#2A334F',
+                width:　 2
+            }
+        },
+        data: ["40周","41周","42周","43周","44周","本周"],
+        axisTick:{
+            show: false
+        },
+        axisLine: {
+
+            lineStyle: {
+                color: '#3F5476',
+                width: 2
+            }
+        },
+        axisLabel: {
+            margin: 10,
+            textStyle: {
+                color: 'white',//坐标值得具体的颜色
+                fontSize: 15
+            }
+        }
+    },
+    yAxis: {
+        type: 'value',
+        splitLine: {
+            show: true,
+            lineStyle:{
+                color: '#2A334F',
+                width:　 2
+            }
+        },
+        axisTick:{
+            show: false
+        },
+        axisLine: {
+            lineStyle: {
+                color: '#3F5476',
+                width: 1
+            }
+        },
+        axisLabel: {
+            margin: 10,
+            formatter: '{value}',
+            textStyle: {
+                color: 'white',//坐标值得具体的颜色
+                fontSize: 15
+            }
+        }
+    },
+    series: [{
+        type: 'bar',
+        itemStyle: {
+            normal: {
+                color:'#61A0A8'
+            }
+        },
+        barGap: '0%',
+        data: [23, 27, 9, 20, 12, 20]
+    },
+    {
+        type: 'bar',
+        barGap: '0%',
+        itemStyle: {
+            normal: {
+                color:'#44647A'
+            }
+        },
+        data: [28, 35, 12, 29, 18, 27]
+    }
+    ]
+};
+/*缺陷分析*/
+var pieOption = {
+    legend: {
+        x: '73%',
+        y: '38%',
+        itemWidth : 12,
+        itemHeight : 12,
+        itemGap: 14,
+        orient: 'vertical',
+        textStyle:{
+            color:'#D3D4D9',
+            fontSize: 15
+        },
+        data: ['开焊','无信号','螺丝折断','掉漆','其它']
+    },
+    series : [
+    {
+        type: 'pie',
+        radius : '65%',
+        center: ['34%', '64%'],
+        label:{
+            normal:{
+                textStyle:{
+                    fontSize: 15
+                },
+                show: true, 
+                formatter: '{d}%',
+                position: 'inside'
+            }
+        },
+        data:[
+        {value:'35', name:'开焊'},
+        {value:'22', name:'无信号'},
+        {value:'18', name:'螺丝折断'},
+        {value:'10', name:'掉漆'},
+        {value:'15', name:'其它'}
+        ]
+    }
+    ],
+    color:["#91c7ae","#ca5a5a","#61a0a8","#c5ab39","#d48265"]
+};
+var line = echarts.init(document.getElementById('timeliness'));
+line.setOption(lineOption);
+var analysisBar = echarts.init(document.getElementById('resourceAnalysis'));
+analysisBar.setOption(analysisBarOption);
+var tendencyBar = echarts.init(document.getElementById('abnormalTendency'));
+tendencyBar.setOption(tendencyBarOption);
+var pie = echarts.init(document.getElementById('defectAnalysis'));
+pie.setOption(pieOption);
+
+setTimeout(function() {     
+    line.resize();
+    analysisBar.resize();
+    tendencyBar.resize();
+	document.getElementById('plan').text=123
+}, 50)
+window.addEventListener("resize", function() {
+    setTimeout(function() {
+        line.resize();
+        line.setOption(lineOption);
+
+        analysisBar.resize();
+        analysisBar.setOption(analysisBarOption);
+
+        tendencyBar.resize();
+        tendencyBar.setOption(tendencyBarOption);
+
+        pie.resize();
+        pie.setOption(pieOption);
+    }, 50)
+});

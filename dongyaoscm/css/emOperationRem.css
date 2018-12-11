@@ -1,0 +1,293 @@
+/* 清除 */
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,dl,dt,dd,input{margin: 0;padding: 0;}
+img{border: none;}
+li{list-style: none;}
+input,select,textarea{outline: none;border:none;background:none;}
+textarea{resize: none;}
+a{text-decoration: none;color: #656565;}
+table {border-collapse: collapse; border-spacing: 0;margin: 0;padding: 0;border: 0;}
+body{
+    background-color: #101631;
+    line-height: 1;
+}
+.container{
+    width: 100%;
+    padding: 0;
+    font-family: "PingFangSC-Regular","Mircosoft YaHei","微软雅黑";
+}
+.header{
+    line-height: 4.2rem;
+    background-color: #232841;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: normal;
+    overflow: hidden;
+}
+.hr_2{
+    height: 0.1rem;
+    background: linear-gradient(to right, #177BF4, #6472FF);
+}
+.header_left{
+    padding-left: 2rem;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+.header_left h3{
+    font-size: 1.5rem;
+    line-height: 4.2rem;
+}
+.logo{
+    width: 3rem;
+    height: 2.9rem;
+    background: url(../image/dbLogo.jpg) center center no-repeat;
+    background-size: cover;
+    margin-right: 0.5rem;
+}
+.header_right{
+    float: right;
+    padding-right: 1rem;
+}
+.header_right span{
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+.content{
+    width: 94.35rem;
+    margin: 0 auto;
+    overflow: hidden;
+}
+h4{
+    font-size: 1.125rem;
+    line-height: 1.125rem;
+    padding-top: 0.9rem;
+    color: #ffffff;
+    padding-left: 1.1rem;
+    font-weight: lighter;
+    position: relative;
+    display: inline-block;
+}
+.top{
+    margin-top: 0.75rem;
+    overflow: hidden;
+}
+.top_item{
+    width: 30.95rem;
+    height: 8.5rem;
+    float: left;
+    margin-right: 0.75rem;
+    background: #232841;
+    border-radius: 8px;
+}
+.top_item:last-child{
+    margin-right: 0;
+}
+.amount{
+    float: left;
+    margin-right: 3.1rem;
+}
+.sum{
+    color: #CA5A5A;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top: 1.75rem;
+    margin-left: 1.1rem;
+}
+.proportion{
+    float: left;
+    color: #ffffff;
+    text-align: center;
+}
+.proportion:last-child{
+    margin-left:2rem;
+}
+.proportion h4{
+    padding-left: 0;
+}
+.proportion p{
+    font-size: 2.5rem;
+    margin-top: 2rem;
+}
+.center{
+    margin: 0.75rem 0;
+    overflow: hidden;
+}
+.percent{
+    font-size: 1.25rem;
+    margin-right: 0.25rem;
+}
+.up{
+    font-size: 1.25rem;
+    color: #C23531;
+}
+.down{
+    font-size: 1.25rem;
+    color: #64C865;
+}
+.top_middle{
+    width: 30.95rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background: #271E36;
+}
+.flex-item{
+    width: 13.7rem;
+    text-align: right;
+}
+.flex-item:last-child{
+    text-align: left;
+}
+.flex-item .sum{
+    margin-left: 0;
+}
+.flex-item h4{
+    padding-top: 0;
+    padding-left: 0;
+}
+.flex-item p{
+    font-size: 3rem;
+    margin-top: 1rem;
+}
+.num{
+    color: #ffffff;
+    font-weight: bold;
+}
+.split{
+    height: 4.1rem;
+    width: 0.1rem;
+    background: #ffffff;
+}
+.center_left{
+    width: 46.8rem;
+    height: 19.25rem;
+    float: left;
+    margin-right: 0.75rem;
+    background: #232841;
+    border-radius: 8px;
+    position: relative;
+}
+.center_right{
+    width: 46.8rem;
+    height: 19.25rem;
+    float: right;
+    background: #232841;
+    border-radius: 8px;
+}
+.stock_table{
+    margin-top: 1rem;
+    width: 100%;
+    font-size: 1rem;
+    color: #FBFBFC;
+}
+.stock_table thead tr{
+    height: 3.2rem;
+    background: #213C64;
+}
+.stock_table tbody tr{
+    height: 3.2rem;
+    text-align: center;
+}
+.stock_table tbody tr:nth-child(even){
+    background: #2A2F47;
+}
+.stock_table tbody tr:nth-child(odd){
+    background: #343950;
+}
+.stock_table td:nth-child(1),
+.stock_table th:nth-child(1){
+    width: 7.2rem;
+    text-align: left;
+    text-indent: 1.5rem;
+}
+
+.bottom{
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+}
+.bottom_item{
+    width: 30.95rem;
+    height: 19.25rem;
+    float: left;
+    margin-right: 0.75rem;
+    background: #232841;
+    border-radius: 8px;
+    position: relative;
+}
+.rank_table{
+    margin-top: 1rem;
+    width: 100%;
+    color: #ffffff;
+    text-align: left;
+    font-size: 0.9rem;
+}
+.rank_table thead tr{
+    height: 2.5rem;
+    background: #4F5367;
+}
+.rank_table tbody tr{
+    height: 2.65rem;
+}
+.rank_table tbody .red{
+    color: #CA5A5A;
+}
+.rank_table tbody .yellow{
+    color: #A08D41;
+}
+.rank_table tbody .green{
+    color: #91C7AE;
+}
+.rank_table .fs_big{
+    font-size: 1.25rem;
+}
+.rank_table td:nth-child(1),
+.rank_table th:nth-child(1){
+    width: 11.5rem;
+    text-indent: 1.3rem;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+    overflow:hidden;
+}
+.rank_table tbody tr:nth-child(even){
+    background: #343950;
+}
+.rank_table tbody tr:nth-child(odd){
+    background: #2A2F47;
+}
+.bottom_item:last-child{
+    margin-right: 0;
+}
+.chart_h4{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.9rem 0 0 1.1rem;
+}
+.wrap_h4::before {
+    content: '';
+    position: absolute;
+    top: 1.1rem;
+    left: 0;
+    height: 1rem;
+    width: 0.3rem;
+    background-color: #188DF0;
+    display: block;
+    opacity: 0.8;
+    z-index: 15;
+}
+#tendency_line{
+    width: 46.7rem;
+    height: 19rem;
+}
+#customer_bar{
+    width: 30.7rem;
+    height: 19rem;
+}
+#organization_bar{
+    width: 30.7rem;
+    height: 19rem;
+}
+.stock_table>thead>tr{
+    background-color: #4F5367 !important;
+}

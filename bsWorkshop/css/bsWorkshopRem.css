@@ -1,0 +1,424 @@
+/* 清除 */
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,dl,dt,dd,input{margin: 0;padding: 0;}
+img{border: none;}
+li{list-style: none;}
+input,select,textarea{outline: none;border:none;background:none;}
+textarea{resize: none;}
+a{text-decoration: none;color: #656565;}
+table {border-collapse: collapse; border-spacing: 0;margin: 0;padding: 0;border: 0;}
+body{
+    background-color: #101631;
+    line-height: 1;
+}
+.container{
+    width: 100%;
+    padding: 0;
+    font-family: "PingFangSC-Regular","Mircosoft YaHei","微软雅黑";
+}
+.header{
+    line-height: 4.2rem;
+    background-color: #232841;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: normal;
+    overflow: hidden;
+}
+.hr_2{
+    height: 0.1rem;
+    background: linear-gradient(to right, #177BF4, #6472FF);
+}
+.header_left{
+    padding-left: 2rem;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+.header_left h3{
+    font-size: 1.5rem;
+    line-height: 4.2rem;
+}
+.logo{
+    width: 5.25rem;
+    height: 3.2rem;
+    background: url(../image/logo.png) center center no-repeat;
+    background-size: cover;
+    margin-right: 0.7rem;
+    margin-top: 0.4rem;
+}
+.header_right{
+    float: right;
+    padding-right: 1rem;
+}
+.header_right span{
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+.content{
+    width: 94.4rem;
+    margin: 0 auto;
+    overflow: hidden;
+}
+h4{
+    font-size: 1.125rem;
+    line-height: 1.125rem;
+    padding-top: 0.9rem;
+    color: #ffffff;
+    padding-left: 1.1rem;
+    font-weight: lighter;
+    position: relative;
+    display: inline-block;
+}
+.top{
+    margin: 0.75rem 0;
+    overflow: hidden;
+}
+.top_left{
+    width: 26.65rem;
+    float: left;
+    margin-right: 0.75rem;
+}
+.top_left_small{
+    height: 10.7rem;
+    margin-bottom: 0.75rem;
+    background: #232841;
+    border-radius: 8px;
+}
+.top_left_item_cont{
+    margin-top: 1.8rem;
+    margin-left: 1.1rem;
+    overflow: hidden;
+    padding-right: 2.3rem;
+}
+.top_left_item_cont p{
+    color: #FFFFFF;
+    margin-bottom: 0.5rem;
+    font-size: 3rem;
+}
+.top_left_item_cont .small_fs{
+    font-size: 0.9rem;
+}
+.cont_left{
+    float: left;
+}
+.cont_left p:nth-child(2){
+    text-indent: 0.4rem;
+}
+.cont_right{
+    float: right;
+}
+.cont_right p:nth-child(2){
+    text-align: center;
+}
+.delay{
+    color: #C23531;
+}
+.top_left_big{
+    height: 19.9rem;
+    background: #232841;
+    border-radius: 8px;
+    position: relative;
+}
+.top_middle{
+    width: 41rem;
+    float: left;
+    margin-right: 0.75rem;
+}
+.top_middle_small{
+    height: 10.7rem;
+    margin-bottom: 0.75rem;
+    background: #232841;
+    border-radius: 8px;
+    position: relative;
+}
+.progress_color{
+    position: absolute;
+    overflow: hidden;
+    top: 1.1rem;
+    left: 10rem;
+    margin-bottom: 1.2rem;
+}
+.progress_color li{
+    float: left;
+    margin-right: 1.9rem;
+    font-size: 0.9rem;
+    color: #ffffff;
+    line-height: 1rem;
+}
+.progress_color span{
+    width: 1rem;
+    height: 1rem;
+    display: inline-block;
+    margin-right: 0.5rem;
+    border-radius: 4px;
+    float: left;
+}
+.progress_cont{
+    margin-top: 1.25rem;
+    margin-left: 1.1rem;
+}
+.progress_item{
+    width: 10rem;
+    height: 6.2rem;
+    float: left;
+    margin-right: 0.5rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+    padding-left: 1.5rem;
+    padding-right: 1.3rem;
+    position: relative;
+}
+.split{
+    height: 2.5rem;
+    width: 0.1rem;
+    position: auto;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 5.9rem;
+}
+.progress_item:nth-child(1) .split{
+    background: #A8D9A8;
+}
+.progress_item:nth-child(2) .split{
+    background: #E5ADAD;
+}
+.progress_item:nth-child(3) .split{
+    background: #A7A9B3;
+}
+.num_line{
+    font-size: 1.0rem;
+}
+.pro_percent{
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+}
+.green{
+    background-color: #50B250;
+}
+.red{
+    background-color: #CA5A5A;
+}
+.gray{
+    background-color: #4F5367;
+}
+.top_middle_big{
+    height: 19.9rem;
+    background: #232841;
+    border-radius: 8px;
+    position: relative;
+}
+.top_right{
+    width: 25.2rem;
+    float: right;
+}
+.top_right_small{
+    height: 15.3rem;
+    background: #232841;
+    margin-bottom: 0.75rem;
+    border-radius: 8px;
+}
+.master_list{
+    margin-top: 0.8rem;
+    width: 100%;
+    color: #ffffff;
+}
+.master_list thead tr{
+    height: 2.5rem;
+    font-size: 0.8rem;
+    background: #213C64;
+}
+.master_list td{
+    font-size: 0.8rem;
+    text-align: center;
+}
+.master_list th:nth-child(1){
+    padding-left: 1.25rem;
+    text-align: left;
+}
+.master_list th:nth-child(2){
+    text-align: left;
+}
+.master_list td:nth-child(1){
+    width: 6.5rem;
+    padding-left: 1.25rem;
+    text-align: left;
+    font-size: 1.25rem;
+}
+.master_list .td_red{
+    color: #ca5a5a;
+}
+.master_list .td_yellow{
+    color: #c5ab39;
+}
+.master_list .td_green{
+    color: #91c7ae;
+}
+.master_list td:nth-child(2){
+    width: 4.2rem;
+    text-align: left;
+}
+.master_list td:nth-child(3){
+    width: 4.4rem;
+}
+.master_list td:nth-child(4){
+    width: 4.6rem;
+}
+.master_list td:nth-child(5){
+    position: relative;
+}
+.pro_icon{
+    width: 2.45rem;
+    height: 2.4rem;
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+}
+.pro_64{
+    background: url(../image/64p.png) center center no-repeat;
+    background-size: cover;
+}
+.pro_56{
+    background: url(../image/56p.png) center center no-repeat;
+    background-size: cover;
+}
+.pro_78{
+    background: url(../image/78p.png) center center no-repeat;
+    background-size: cover;
+}
+.pro_80{
+    background: url(../image/80p.png) center center no-repeat;
+    background-size: cover;
+}
+.master_list tr{
+    height: 3.3rem;
+}
+.top_right_big{
+    height: 15.3rem;
+    background: #232841;
+    border-radius: 8px;
+    position: relative;
+}
+.bottom{
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+}
+.bottom_left{
+    height: 16.4rem;
+    width: 68.4rem;
+    float: left;
+    margin-right: 0.75rem;
+    background: #232841;
+    border-radius: 8px;
+}
+.progress_table{
+    margin-top: 1rem;
+}
+.progress_table th,
+.progress_table td{
+    text-align: left;
+     color: #ffffff;
+    font-size: 0.75rem;
+}
+.progress_table .center{
+    text-align: center;
+}
+.progress_table .right{
+    text-align: right;
+}
+.progress_table thead tr{
+    height: 3.2rem;
+    background: #223253;
+}
+.progress_table tbody tr{
+    height: 3.4rem;
+    background: #232841;
+}
+.progress_table tbody td:nth-child(1),
+.progress_table thead th:nth-child(1){
+    padding-left: 1.7rem;
+}
+.progress_table tbody td:last-child{
+    padding-right: 2.1rem;
+}
+.progress_table thead th:last-child{
+    padding-right: 1.4rem;
+}
+.progress_table tbody tr:nth-child(2) td{
+    position: relative;
+    background: #343950;
+}
+.progress_table .small_td{
+    width: 4.35rem;
+}
+.progress_table .middle_td{
+    width: 5.2rem;
+}
+.progress_table .big_td{
+    width: 5.5rem;
+}
+.progress_table .xbig_td{
+    width: 6.8rem;
+}
+.progress_table .completed{
+    color: #3f6e51;
+}
+.progress_table .uncompleted{
+    color: #c23531;
+}
+.progress_table .pro_icon{
+    font-size: 0.6rem;
+    line-height: 2.4rem;
+}
+.bottom_right{
+    height: 16.4rem;
+    width: 25.2rem;
+    float: right;
+    background: #232841;
+    border-radius: 8px;
+    position: relative;
+}
+.chart_h4{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.9rem 0 0 1.1rem;
+}
+.wrap_h4::before {
+    content: '';
+    position: absolute;
+    top: 1.1rem;
+    left: 0;
+    height: 1rem;
+    width: 0.3rem;
+    background-color: #188DF0;
+    display: block;
+    opacity: 0.8;
+    z-index: 15;
+}
+#timeliness{
+    width: 26rem;
+    height: 20rem;
+}
+#resourceAnalysis{
+    width: 40.8rem;
+    height: 20rem;
+}
+#abnormalTendency{
+    width: 28.4rem;
+    height: 19.5rem;
+}
+#defectAnalysis{
+    width: 25.4rem;
+    height: 18.5rem;
+}
+.progress_table>thead>tr, .master_list>thead>tr{
+    background-color: #34384F !important;
+}

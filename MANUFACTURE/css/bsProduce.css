@@ -1,0 +1,322 @@
+﻿/* 清除 */
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,dl,dt,dd,input{margin: 0;padding: 0;}
+img{border: none;}
+li{list-style: none;}
+input,select,textarea{outline: none;border:none;background:none;}
+textarea{resize: none;}
+a{text-decoration: none;color: #656565;}
+table {border-collapse: collapse; border-spacing: 0;margin: 0;padding: 0;border: 0;}
+body{
+    background-color: #101631;
+    line-height: 1;
+}
+.container{
+    width: 100%;
+    padding: 0;
+    font-family: "PingFangSC-Regular","Mircosoft YaHei","微软雅黑";
+}
+.header{
+    line-height: 84px;
+    background-color: #232841;
+    color: #fff;
+    font-size: 24px;
+    font-weight: normal;
+    overflow: hidden;
+}
+.hr_2{
+    height: 2px;
+    background: linear-gradient(to right, #177BF4, #6472FF);
+}
+.header_left{
+    padding-left: 40px;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+.header_left h3{
+    font-size: 30px;
+    line-height: 84px;
+}
+.logo{
+    width: 105px;
+    height: 64px;
+    background: url(../image/logo.png) center center no-repeat;
+    background-size: cover;
+    margin-right: 14px;
+    margin-top: 8px;
+}
+.header_right{
+    float: right;
+    padding-right: 20px;
+}
+.header_right span{
+    display: inline-block;
+    margin-right: 10px;
+}
+.content{
+    width: 1888px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+h4{
+    font-size: 22.5px;
+    line-height: 22.5px;
+    padding-top: 18px;
+    color: #ffffff;
+    padding-left: 22px;
+    font-weight: lighter;
+    position: relative;
+    display: inline-block;
+}
+/*top*/
+.top{
+    margin: 15px 0;
+    overflow: hidden;
+}
+.top_item{
+    width: 619.2px;
+    height: 470px;
+    background: #232841;
+    border-radius: 8px;
+    float: left;
+    position: relative;
+}
+.top_item:nth-child(2){
+    margin: 0 15px;
+}
+.white_box{
+    width: 536px;
+    height: 150px;
+    margin: 22px auto 0;
+    padding: 0 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.white_box .data{
+    font-size: 44px;
+    color: #DFE0E2;
+    margin-bottom: 22px;
+}
+.white_box .text{
+    font-size: 20px;
+    color: #9EA0A7;
+}
+.red_box{
+    width: 592px;
+    height: 212px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #342D44;
+    border-radius: 4px;
+    flex-direction: column;
+    margin: 0 auto;
+}
+.red_box .data{
+    color: #CA5A5A;
+    font-size: 75px;
+    margin-bottom: 14px;
+    font-weight: bold;
+}
+.red_box .text{
+    font-size: 25px;
+    color: #ffffff;
+}
+.split{
+    height: 78px;
+    width: 2px;
+    background: #9194A0;
+    display: inline-block;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+/*bottom*/
+.bottom{
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+.bottom_small{
+    width: 385px;
+    height: 490px;
+    background: #232841;
+    border-radius: 8px;
+    float: left;
+    position: relative;
+}
+.bottom_big{
+    width: 1088px;
+    height: 490px;
+    background: #232841;
+    border-radius: 8px;
+    float: left;
+    margin: 0 15px;
+    position: relative;
+}
+.color_list{
+    position: absolute;
+    overflow: hidden;
+    top: 24px;
+    left:368px;
+}
+.color_list li{
+    float: left;
+    margin-right: 35px;
+    color: #ffffff;
+    font-size: 18px;
+    overflow: hidden;
+    line-height: 20px;
+}
+.color_list span{
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    margin-right: 5px;
+    float: left;
+    display: inline-block;
+}
+.white{
+    background: #ffffff;
+}
+.blue{
+    background: #188DF0;
+}
+.yellow{
+    background: #C5AB39;
+}
+.red{
+    background: #CA5A5A;
+}
+.order_table{
+    margin-top: 26px;
+    width: 100%;
+    text-align: left;
+    color: #ffffff;
+}
+.order_table thead tr{
+    height: 65px; 
+    background: #223253;
+}
+.order_table tbody tr{
+    height: 68px;
+}
+.order_table tbody tr:nth-child(odd){
+    background: #1D233C;
+}
+.order_table tbody td:nth-child(5),
+.order_table tbody td:nth-child(6),
+.order_table thead th:nth-child(5),
+.order_table thead th:nth-child(6){
+    text-align: center;
+}
+.order_table tbody td:nth-child(8),
+.order_table thead th:nth-child(8){
+    text-align: right;
+    padding-right: 22px;
+}
+.order_table tbody td:nth-child(1),
+.order_table thead th:nth-child(1){
+    padding-left: 26px;
+}
+.order_table .small{
+    width: 86px;
+}
+.order_table .middle{
+    width: 124px;
+}
+.order_table .big{
+    width: 150px;
+}
+.order_table .xbig{
+    width: 164px;
+}
+.order_table .yellow_tr td{
+    color: #C5AB39;
+}
+
+.order_table .white_tr td{
+    color: #FFFFFF;
+}
+
+.order_table .red_tr td{
+    color: #FF0000;
+}
+
+.order_table .blue_tr td{
+    color:#0000FF;
+}
+
+.pro_box{
+    width: 60px;
+    height: 8px;
+    background: #213C64;
+    border-radius: 3px;
+    float: right;
+    margin-right: 6px;
+}
+.pro_cont{
+    height: 100%;
+    width: 60%;
+    background: #188DF0;
+    border-radius: 3px;
+}
+.stop_table{
+    margin-top: 26px;
+    width: 100%;
+    text-align: left;
+    color: #ffffff;
+}
+.stop_table thead tr{
+    height: 65px; 
+    background: #223253;
+}
+.stop_table tbody tr{
+    height: 66px;
+}
+.stop_table tbody td:nth-child(3),
+.stop_table thead th:nth-child(3){
+    text-align: right;
+    padding-right: 26px;
+}
+.stop_table tbody td:nth-child(1),
+.stop_table thead th:nth-child(1){
+    padding-left: 24px;
+}
+.stop_table .no_1{
+    font-size: 30px;
+    color: #CA5A5A;
+}
+.stop_table .no_2{
+    font-size: 30px;
+    color: #C5AB39;
+}
+.stop_table .no_3{
+    font-size: 30px;
+    color: #61A0A8;
+}
+.chart_h4{
+    position: absolute;
+    top: 24px;
+    left: 22px;
+    padding: 0;
+}
+#workshopBar{
+     width: 619.2px;
+    height: 446px;
+    padding-top: 24px;
+}
+#consumeLine{
+    width: 619.2px;
+    height: 446px;
+    padding-top: 24px;
+}
+#qualityPie{
+    width: 385px;
+    height: 466px;
+    padding-top: 24px;
+}

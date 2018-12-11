@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8">
+    <title>东药</title>
+    <script>
+       var setPro = 1;
+        (function(doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function() {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    setPro = clientWidth / 960;
+                    docEl.style.fontSize = 10 * (clientWidth / 960) + 'px';
+                };
+                recalc();
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+    <!-- 载入样式资源  -->
+    <link rel="stylesheet" type="text/css" href="css/dongyao.css">
+</head>
+<body>
+    <div class="container" id="app">
+        <div class="header">
+            <div class="head-logo">
+            </div>
+            <h3 class="header-left">东药财务共享中心财务处理看板</h3>
+            <div class="header_right">
+                <span id="date"></span><span id="time"></span>
+            </div>
+        </div>
+        <div class="content">
+            <!-- 任务大模块  -->
+            <div class="top"></div>
+            <div class="middle">
+                <!-- 任务预警  -->
+                <div class="big_middle_item"></div>
+                <!-- 今日个人处理排行  -->
+                <div class="middle_item"></div>
+            </div>
+            <div class="bottom">
+                <!-- 任务质量分布  -->
+                <div class="big_bottom_item"></div>
+                <!-- 任务效率分布  -->
+                <div class="bottom_item"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="./js/jquery.min.js"></script>
+<script type="text/javascript" src="./js/echarts.min.js"></script>
+<script type="text/javascript" src="./js/template-web.js"></script>
+<!-- 任务大模块  -->
+<script id="tpl-TaskStatisticsModule" type="text/html">
+    <div class="big_top_item">
+        <p class="item-title-first">本年累计任务数</p>
+        <div class="clearFix renWu-div">
+            {{set temp = $imports.split($data.AnnualTotalTasks, '')}}
+            {{set temp = $imports.unshiftZero(temp, 7)}}
+            {{each temp value i}}
+                {{if i%3 == 0 && i != 6}}
+                    <p class="first num-p">
+                        {{value}}
+                    </p>
+                    <div class="dom-div"><span>,</span></div>
+                {{else}}
+                    <p class="first num-p">
+                        {{value}}
+                    </p>
+                {{/if}}
+            {{/each}}
+        </div>
+    </div>
+    {{each $data.OtherTaskBlocks value i}}
+        <div class="top_item">
+            <p class="item-title">{{value.title}}</p>
+            <p class="item-num"><span>{{$imports.formatNum(value.content)}}</span></p>
+        </div>
+    {{/each}}
+</script>
+<!-- 任务预警  -->
+<script id="tpl-TaskWarningModule" type="text/html">
+    <p class="item-title two-line">任务预警</p>
+    <div class="img_cont">
+        {{each $data value i}}
+            <div class="cont">
+                <div id="imgBox_{{i+1}}" class="imgBox"></div>
+                <p>{{value.title}}</p>
+            </div>
+        {{/each}}
+    </div>
+</script>
+<!-- 今日个人处理排行  -->
+<script id="tpl-PersonalRanking" type="text/html">
+    <p class="item-title two-line">今日个人处理排行</p>
+    <div class="rankDiv" id="rankDiv">
+        <div class="dayStafferRank" id="rankSlideOne">
+            <ul>
+                {{each $data value i}}
+                    <li class="">
+                        <p class="pNo">NO.{{i+1}}</p>
+                        <p class="pName">{{value.name}}</p>
+                        <p class="pNum">{{value.rankvalue}}</p>
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+        <div class="dayStafferRank" id="rankSlideTwo"></div>
+    </div>
+</script>
+<!-- 任务质量分布  -->
+<script id="tpl-QualityModule" type="text/html">
+    <p class="item-title two-line">任务质量分布</p>
+    <ul class="table">
+        <div class="table-head">
+            {{each feilds value i}}
+                    <p class="cell-{{i + 1}}">{{value}}</p>
+            {{/each}}
+        </div>
+         {{each data value i}}
+            <li class="table-body-li">
+                {{each value item j}}
+                    <p class="cell-{{j + 1}}">{{item}}</p>
+                {{/each}}
+            </li>
+        {{/each}}
+    </ul>
+</script>
+<!-- 任务效率分布  -->
+<script id="tpl-TaskEfficiencyModule" type="text/html">
+    <p class="item-title two-line">任务效率分布</p>
+        <ul class="table-efficient">
+            <div class="table-head">
+                {{each feilds value i}}
+                    <p class="cell-{{i + 1}}">{{value}}</p>
+                {{/each}}
+            </div>
+            {{each data value i}}
+                <li class="table-body-li">
+                    {{each value item j}}
+                        <p class="cell-{{j + 1}}">{{item}}</p>
+                    {{/each}}
+                </li>
+            {{/each}}
+        </ul>
+</script>
+<script type="text/javascript" src="./js/instrument.js"></script>
+<script type="text/javascript">
+function timeController() {
+        function _paddNum(num){
+          num += "";
+          return num.replace(/^(\d)$/,"0$1");
+        }
+
+        function _time() {
+            clearTimeout(timer);//清除定时器
+            date = new Date()
+            var cfg = {
+               yyyy : date.getFullYear() //年 : 4位
+              ,MM : _paddNum(date.getMonth() + 1) //月 : 如果1位的时候补0
+              ,dd : _paddNum(date.getDate())//日 : 如果1位的时候补0
+              ,hh : _paddNum(date.getHours())  //时
+              ,mm : _paddNum(date.getMinutes()) //分
+              ,ss : _paddNum(date.getSeconds()) //秒
+            }
+            $('.time_head').text('最近数据更新时间：');
+            $('#date').text(cfg.yyyy+"-"+cfg.MM+"-"+cfg.dd)
+            $("#time").text(cfg.hh+":"+cfg.mm+":"+cfg.ss)
+            timer = setTimeout(_time,30000); //设定定时器，循环运行
+        }
+
+        var timer = setTimeout(_time,100);
+    }
+timeController();
+</script>
+</html>

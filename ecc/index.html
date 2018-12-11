@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta charset="utf-8">
+		<title>全渠道数字化</title>
+		<script>
+		var setPro = 1;
+        (function(doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function() {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    setPro = clientWidth / 960;
+                    docEl.style.fontSize = 10 * (clientWidth / 960) + 'px';
+                };
+                recalc();
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+		</script>
+		<link rel="stylesheet" type="text/css" href="css/digital.css">
+		<style type="text/css">
+
+		</style>
+	</head>
+	<div class="container" id="app">
+		<div class="header">
+			<div class="head-logo"></div>
+			<h3 class="header-left">全渠道数字化运营看板</h3>
+			<div class="header_right">
+                <span id="date"></span><span id="time"></span>
+            </div>
+		</div>
+		<div class="content clearFix">
+			<div class="left ">
+				<div class="left-top">
+					<p class="item-title one-line">品类排名</p>
+					<div class="bar-chart-one" id="bar-one">
+
+					</div>
+				</div>
+				<div class="left-bottom">
+					<p class="item-title one-line">地区订单</p>
+					<div class="bar-chart-two" id="bar-two">
+
+					</div>
+				</div>
+			</div>
+			<div class="center ">
+				<div class="center-top">
+					<div class="clearFix">
+						<p class="item-title one-line fl">交易金额（元）</p>
+						<div class="time-div fl" style="display: none;">
+							<img src="./img/timeLogo.png" alt="" class="time-logo">
+							<p class="time">
+								2017-09-28/10:18:36
+							</p>
+						</div>
+					</div>
+					<div class="clearFix renWu-div">
+						<!--<p class=" num-p">9</p>
+                        <p class=" num-p">0</p>
+                       <p class=" num-p">0</p>
+                       <div class="dom-div"><span>,</span></div>
+                       <p class="pink-P num-p">0</p>
+                       <p class="pink-P num-p">0</p>
+                       <p class="pink-P num-p">0</p>
+                       <div class="dom-div"><span>,</span></div>
+                       <p class="pink-P num-p">0</p>
+                       <p class="pink-P num-p">0</p>
+                       <p class="pink-P num-p">0</p>-->
+					</div>
+
+				</div>
+				<div class="center-bottom">
+					<ul class="center-bottom-card clearFix">
+						<li class="card-item">
+							<p>到店人数</p>
+							<p><span>89,000</span>人</p>
+						</li>
+						<li class="card-item">
+							<p>到店人数</p>
+							<p><span>89,000</span>人</p>
+						</li>
+						<li class="card-item">
+							<p>到店人数</p>
+							<p><span>89,000</span>人</p>
+						</li>
+					</ul>
+					<div class="chart-map" id="map-zoomData">
+
+					</div>
+				</div>
+			</div>
+			<div class="right ">
+				<div class="right-top">
+					<p class="item-title one-line">热销排行榜</p>
+					<ul class="table-efficient">
+						<div class="table-head">
+							<p class="head-cell-one">排行</p>
+							<p class="cell-two">类别</p>
+							<p class="cell-three">产品名称</p>
+							<p class="cell-four">金额</p>
+						</div>
+					</ul>
+
+				</div>
+				<div class="right-bottom">
+					<p class="item-title one-line">渠道占比</p>
+					<div class="chart-pie" id="pie-one">
+
+					</div>
+					<div class="sale-div clearFix">
+						<div class="sale-item">
+							<p>全渠道销售总额</p>
+							<p>89,000人</p>
+						</div>
+						<div class="sale-item">
+							<p>移动端销售总额</p>
+							<p>89,000人</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<body>
+
+	</body>
+
+	<script type="text/javascript" src="./js/jquery.min.js"></script>
+	<script type="text/javascript" src="./js/echarts.min.js"></script>
+	<script type="text/javascript" src="./js/china.js"></script>
+	<script type="text/javascript" src="./js/mapOption.js"></script>
+	<script type="text/javascript" src="./js/barAndPie.js"></script>
+	<script type="text/javascript" src="./js/data.js"></script>
+	<!-- <script type="text/javascript" src="./js/vue.min.js"></script> -->
+	<!-- <script type="text/javascript" src="./js/instrument.js"></script> -->
+	<script type="text/javascript">
+	</script>
+	<script type="text/javascript">
+	function timeController() {
+	        function _paddNum(num){
+	          num += "";
+	          return num.replace(/^(\d)$/,"0$1");
+	        }
+
+	        function _time() {
+	            clearTimeout(timer);//清除定时器
+	            date = new Date()
+	            var cfg = {
+	               yyyy : date.getFullYear() //年 : 4位
+	              ,MM : _paddNum(date.getMonth() + 1) //月 : 如果1位的时候补0
+	              ,dd : _paddNum(date.getDate())//日 : 如果1位的时候补0
+	              ,hh : _paddNum(date.getHours())  //时
+	              ,mm : _paddNum(date.getMinutes()) //分
+	              ,ss : _paddNum(date.getSeconds()) //秒
+	            }
+	            $('.time_head').text('最近数据更新时间：');
+	            $('#date').text(cfg.yyyy+"-"+cfg.MM+"-"+cfg.dd)
+	            $("#time").text(cfg.hh+":"+cfg.mm+":"+cfg.ss)
+	            timer = setTimeout(_time,1000); //设定定时器，循环运行
+	        }
+
+	        var timer = setTimeout(_time,100);
+	    }
+	timeController();
+	</script>
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8">
+    <title>金蝶云食神餐营云看板</title>
+    <script>
+    var setPro = 1;
+        (function(doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function() {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    setPro = clientWidth / 960;
+                    docEl.style.fontSize = 10 * (clientWidth / 960) + 'px';
+                };
+                recalc();
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+    <link rel="stylesheet" type="text/css" href="css/digital.css">
+    <style type="text/css">
+
+    </style>
+</head>
+    <div class="container" id="app">
+        <div class="header">
+            <div class="head-logo"></div>
+            <h3 class="header-left">清媞餐厅运营看板</h3>
+            <div class="header_right">
+                <span id="date"></span><span id="time"></span>
+            </div>
+        </div>
+        <div class="content clearFix" v-if="display">
+            <div class="left ">
+                <div class="left-top">
+                    <p class="item-title one-line">本年集团交易</p>
+                    <div class=" clearFix">
+                        <div class="left-top-card left-top-card-one">
+                            <p class="colorCE">{{ display.company.totalAmount | formatMoney }}</p>
+                            <p>交易总额（元）</p>
+                        </div>
+                        <div class="left-top-card">
+                            <p>{{ display.company.totalCount | formatMoney }}</p>
+                            <p>交易笔数</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="left-middle">
+                    <p class="item-title one-line">会员数</p>
+                    <div class="middle-bigCard">
+                        <p>{{ display.member.total | formatMoney }}</p>
+                        <p>总会员数</p>
+                    </div>
+                    <div class="bottom-card clearFix">
+                        <div class="">
+                            <div class="">{{ display.member.new | formatMoney }}</div>
+                            <p>今日新增会员</p>
+                        </div>
+                        <div class="">
+                            <div class="increase-icon">{{ display.member.deposit | formatMoney }}<span class="span-yuan">元</span></div>
+                            <p>今日会员储值</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="left-bottom">
+                    <p class="item-title one-line">收款方式</p>
+                    <div class="pie-left" id="pie-left"></div>
+                </div>
+            </div>
+            <div class="center ">
+                <div class="center-top">
+                    <p class="item-title one-line">今日Top20家门店流水 </p>
+                    <div class="clearFix">
+                        <div class="center-top-bigCard center-top-first">
+                            <p class="colorCE">{{ display.qingti.totalAmount | formatMoney }}</p>
+                            <p>交易金额（元）</p>
+                        </div>
+                        <div class="center-top-bigCard center-top-second">
+                            <p>{{ display.qingti.totalCount | formatMoney }}</p>
+                            <p>交易笔数</p>
+                        </div>
+                        <div class="center-top-bigCard">
+                            <p>{{ display.costPerPerson | formatMoney }}</p>
+                            <p>人均消费（元）</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="center-bottom">
+                    <p class="item-title one-line">门店销售排行榜（日营业） </p>
+                    <ul class="table-efficient">
+                        <div class="table-head">
+                            <p class="head-cell-one">排行</p>
+                            <p class="cell-two">门店</p>
+                            <p class="cell-three"></p>
+                            <p class="cell-four">人数</p>
+                            <p class="cell-five">总金额</p>
+                        </div>
+                        <li class="table-body-li clearFix color5A" v-for="(item, index) in display.shops">
+                            <p class="cell-one" v-if="index <= 3">
+                                <img class="topLogo" :src="getRankImg(index)" alt="">
+                            </p>
+                            <div class="cell-one" v-else>
+                                <div class="NoThree">
+                                    {{ index + 1 }}
+                                </div>
+                            </div>
+                            <p class="cell-two">{{ item.name }}</p>
+                            <div class="cell-jdt">
+                                <div class="cell-jd">
+
+                                </div>
+                            </div>
+                            <p class="cell-three">
+                                {{ getAmountPercent(item) }}%
+                            </p>
+                            <p class="cell-four">{{ item.eatInCount | formatMoney }}</p>
+                            <p class="cell-five">{{ item.amountPerDay | formatMoney }}</p>
+                        </li>
+                        <!-- <li class="table-body-li clearFix colorC5">
+                            <p class="cell-one">
+                                <img class="topLogo" src="./img/top2.png" alt="">
+                            </p>
+                            <p class="cell-two">清媞金蝶软件园店</p>
+                            <div class="cell-jdt">
+                                <div class="cell-jd"></div>
+                            </div>
+                            <p class="cell-three">
+                                90%
+                            </p>
+                            <p class="cell-four">1,351</p>
+                            <p class="cell-five">54,091</p>
+                        </li>
+                        <li class="table-body-li clearFix color91">
+                            <p class="cell-one">
+                                <img class="topLogo" src="./img/top3.png" alt="">
+                            </p>
+                            <p class="cell-two">清媞金蝶软件园店</p>
+                            <div class="cell-jdt">
+                                <div class="cell-jd"></div>
+                            </div>
+                            <p class="cell-three">
+                                90%
+                            </p>
+                            <p class="cell-four">1,351</p>
+                            <p class="cell-five">54,091</p>
+                        </li>
+                        <li class="table-body-li clearFix colorff">
+                            <div class="cell-one ">
+                                <div class="NoThree">
+                                    4
+                                </div>
+                            </div>
+                            <p class="cell-two">清媞金蝶软件园店</p>
+                            <div class="cell-jdt">
+                                <div class="cell-jd"></div>
+                            </div>
+                            <p class="cell-three">
+                                90%
+                            </p>
+                            <p class="cell-four">1,351</p>
+                            <p class="cell-five">54,091</p>
+                        </li>
+                        <li class="table-body-li clearFix colorff">
+                            <div class="cell-one ">
+                                <div class="NoThree">
+                                    5
+                                </div>
+                            </div>
+                            <p class="cell-two">清媞金蝶软件园店</p>
+                            <div class="cell-jdt">
+                                <div class="cell-jd"></div>
+                            </div>
+                            <p class="cell-three">
+                                90%
+                            </p>
+                            <p class="cell-four">1,351</p>
+                            <p class="cell-five">54,091</p>
+                        </li>
+                        <li class="table-body-li clearFix colorff">
+                            <div class="cell-one ">
+                                <div class="NoThree">
+                                    6
+                                </div>
+                            </div>
+                            <p class="cell-two">清媞金蝶软件园店</p>
+                            <div class="cell-jdt">
+                                <div class="cell-jd"></div>
+                            </div>
+                            <p class="cell-three">
+                                90%
+                            </p>
+                            <p class="cell-four">1,351</p>
+                            <p class="cell-five">54,091</p>
+                        </li>
+                        <li class="table-body-li clearFix colorff">
+                            <div class="cell-one ">
+                                <div class="NoThree">
+                                    7
+                                </div>
+                            </div>
+                            <p class="cell-two">清媞金蝶软件园店</p>
+                            <div class="cell-jdt">
+                                <div class="cell-jd"></div>
+                            </div>
+                            <p class="cell-three">
+                                90%
+                            </p>
+                            <p class="cell-four">1,351</p>
+                            <p class="cell-five">54,091</p>
+                        </li>
+                        <li class="table-body-li clearFix colorff">
+                            <div class="cell-one ">
+                                <div class="NoThree">
+                                    8
+                                </div>
+                            </div>
+                            <p class="cell-two">清媞金蝶软件园店</p>
+                            <div class="cell-jdt">
+                                <div class="cell-jd"></div>
+                            </div>
+                            <p class="cell-three">
+                                90%
+                            </p>
+                            <p class="cell-four">1,351</p>
+                            <p class="cell-five">54,091</p>
+                        </li>
+                        <li class="table-body-li clearFix colorff">
+                            <div class="cell-one ">
+                                <div class="NoThree">
+                                    9
+                                </div>
+                            </div>
+                            <p class="cell-two">清媞金蝶软件园店</p>
+                            <div class="cell-jdt">
+                                <div class="cell-jd"></div>
+                            </div>
+                            <p class="cell-three">
+                                90%
+                            </p>
+                            <p class="cell-four">1,351</p>
+                            <p class="cell-five">54,091</p>
+                        </li>
+                        <li class="table-body-li clearFix colorff">
+                            <div class="cell-one ">
+                                <div class="NoThree">
+                                    10
+                                </div>
+                            </div>
+                            <p class="cell-two">清媞金蝶软件园店</p>
+                            <div class="cell-jdt">
+                                <div class="cell-jd"></div>
+                            </div>
+                            <p class="cell-three">
+                                90%
+                            </p>
+                            <p class="cell-four">1,351</p>
+                            <p class="cell-five">54,091</p>
+                        </li>
+                        <li class="table-body-li clearFix colorff">
+                            <div class="cell-one ">
+                                <div class="NoThree">
+                                    11
+                                </div>
+                            </div>
+                            <p class="cell-two">清媞金蝶软件园店</p>
+                            <div class="cell-jdt">
+                                <div class="cell-jd"></div>
+                            </div>
+                            <p class="cell-three">
+                                90%
+                            </p>
+                            <p class="cell-four">1,351</p>
+                            <p class="cell-five">54,091</p>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+            <div class="right ">
+                <div class="right-top">
+                    <p class="item-title one-line">今日门店异常情况</p>
+                    <ul class="right-card-content">
+                        <li class="right-top-card" v-for="item in display.shopExceptions">
+                            <p>{{ item.name }}</p>
+                            <div class="">
+                                <span>{{ item.amount | formatMoney }}</span>
+                                <span>（{{ item.count }}单）</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="right-middle">
+                    <p class="item-title one-line">消费类型占比 </p>
+                    <div class="chart-pie-cost" id="pie-two">
+                    </div>
+                </div>
+                <div class="right-bottom">
+                    <p class="item-title one-line">渠道销售占比</p>
+                    <div class="chart-pie-sale" id="pie-three">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<body>
+
+</body>
+
+<script type="text/javascript" src="./js/es6-promise.auto.min.js"></script>
+<script type="text/javascript" src="./js/jquery.min.js"></script>
+<script type="text/javascript" src="./js/echarts.min.js"></script>
+<script type="text/javascript" src="./js/vue.js"></script>
+<script type="text/javascript" src="./js/axios.js"></script>
+<script type="text/javascript" src="./js/index.js"></script>
+<script type="text/javascript" src="./js/barAndPie.js"></script>
+
+<script type="text/javascript">
+function timeController() {
+        function _paddNum(num){
+          num += "";
+          return num.replace(/^(\d)$/,"0$1");
+        }
+
+        function _time() {
+            clearTimeout(timer);//清除定时器
+            date = new Date()
+            var cfg = {
+               yyyy : date.getFullYear() //年 : 4位
+              ,MM : _paddNum(date.getMonth() + 1) //月 : 如果1位的时候补0
+              ,dd : _paddNum(date.getDate())//日 : 如果1位的时候补0
+              ,hh : _paddNum(date.getHours())  //时
+              ,mm : _paddNum(date.getMinutes()) //分
+              ,ss : _paddNum(date.getSeconds()) //秒
+            }
+            $('.time_head').text('最近数据更新时间：');
+            $('#date').text(cfg.yyyy+"-"+cfg.MM+"-"+cfg.dd)
+            $("#time").text(cfg.hh+":"+cfg.mm+":"+cfg.ss)
+            timer = setTimeout(_time,1000); //设定定时器，循环运行
+        }
+
+        var timer = setTimeout(_time,100);
+    }
+timeController();
+</script>
+</html>

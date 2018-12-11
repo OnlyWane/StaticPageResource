@@ -1,0 +1,334 @@
+﻿/* 清除 */
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,dl,dt,dd,input{margin: 0;padding: 0;}
+img{border: none;}
+li{list-style: none;}
+input,select,textarea{outline: none;border:none;background:none;}
+textarea{resize: none;}
+a{text-decoration: none;color: #656565;}
+table {border-collapse: collapse; border-spacing: 0;margin: 0;padding: 0;border: 0;}
+body{
+    background-color: #101631;
+    line-height: 1;
+}
+.container{
+    width: 100%;
+    padding: 0;
+    font-family: "PingFangSC-Regular","Mircosoft YaHei","微软雅黑";
+}
+.header{
+    line-height: 4.2rem;
+    background-color: #232841;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: normal;
+    overflow: hidden;
+}
+.hr_2{
+    height: 0.1rem;
+    background: linear-gradient(to right, #177BF4, #6472FF);
+}
+.header_left{
+    padding-left: 2rem;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+.header_left h3{
+    font-size: 1.5rem;
+    line-height: 4.2rem;
+}
+.logo{
+    width: 5.25rem;
+    height: 3.2rem;
+    background: url(../image/logo.png) center center no-repeat;
+    background-size: cover;
+    margin-right: 0.7rem;
+    margin-top: 0.4rem;
+}
+.header_right{
+    float: right;
+    padding-right: 1rem;
+}
+.header_right span{
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+.content{
+    width: 94.4rem;
+    margin: 0 auto;
+    overflow: hidden;
+}
+h4{
+    font-size: 1.125rem;
+    line-height: 1.125rem;
+    padding-top: 0.9rem;
+    color: #ffffff;
+    padding-left: 1.1rem;
+    font-weight: lighter;
+    position: relative;
+    display: inline-block;
+}
+/*top*/
+.top{
+    margin: 0.75rem 0;
+    overflow: hidden;
+}
+.top_item{
+    width: 30.96rem;
+    height: 23.5rem;
+    background: #232841;
+    border-radius: 8px;
+    float: left;
+    position: relative;
+}
+.top_item:nth-child(2){
+    margin: 0 0.75rem;
+}
+.white_box{
+    width: 26.8rem;
+    height: 7.5rem;
+    margin: 1.1rem auto 0;
+    padding: 0 1.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.white_box .data{
+    font-size: 2.2rem;
+    color: #DFE0E2;
+    margin-bottom: 1.1rem;
+}
+.white_box .text{
+    font-size: 1rem;
+    color: #9EA0A7;
+}
+.red_box{
+    width: 29.6rem;
+    height: 10.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #342D44;
+    border-radius: 4px;
+    flex-direction: column;
+    margin: 0 auto;
+}
+.red_box .data{
+    color: #CA5A5A;
+    font-size: 3.75rem;
+    margin-bottom: 0.7rem;
+    font-weight: bold;
+}
+.red_box .text{
+    font-size: 1.25rem;
+    color: #ffffff;
+}
+.split{
+    height: 3.9rem;
+    width: 0.1rem;
+    background: #9194A0;
+    display: inline-block;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+/*bottom*/
+.bottom{
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+}
+.bottom_small{
+    width: 19.25rem;
+    height: 24.5rem;
+    background: #232841;
+    border-radius: 8px;
+    float: left;
+    position: relative;
+}
+.bottom_big{
+    width: 54.4rem;
+    height: 24.5rem;
+    background: #232841;
+    border-radius: 8px;
+    float: left;
+    margin: 0 0.75rem;
+    position: relative;
+}
+.color_list{
+    position: absolute;
+    overflow: hidden;
+    top: 1.2rem;
+    left:18.4rem;
+}
+.color_list li{
+    float: left;
+    margin-right: 1.75rem;
+    color: #ffffff;
+    font-size: 0.9rem;
+    overflow: hidden;
+    line-height: 1rem;
+}
+.color_list span{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 2px;
+    margin-right: 0.25rem;
+    float: left;
+    display: inline-block;
+}
+.white{
+    background: #ffffff;
+}
+.blue{
+    background: #188DF0;
+}
+.yellow{
+    background: #C5AB39;
+}
+.red{
+    background: #CA5A5A;
+}
+.order_table{
+    margin-top: 1.3rem;
+    width: 100%;
+    text-align: left;
+    color: #ffffff;
+}
+.order_table thead tr{
+    height: 3.25rem;
+    background: #223253;
+}
+.order_table tbody tr{
+    height: 3.4rem;
+}
+.order_table tbody tr:nth-child(odd){
+    background: #1D233C;
+}
+.order_table tbody td:nth-child(5),
+.order_table tbody td:nth-child(6),
+.order_table thead th:nth-child(5),
+.order_table thead th:nth-child(6){
+    text-align: center;
+}
+.order_table tbody td:nth-child(8),
+.order_table thead th:nth-child(8){
+    text-align: right;
+    padding-right: 1.1rem;
+}
+.order_table tbody td:nth-child(1),
+.order_table thead th:nth-child(1){
+    padding-left: 1.3rem;
+}
+.order_table .small{
+    width: 4.3rem;
+}
+.order_table .middle{
+    width: 6.2rem;
+}
+.order_table .big{
+    width: 7.5rem;
+}
+.order_table .xbig{
+    width: 8.2rem;
+}
+.order_table .yellow_tr td{
+    color: #C5AB39;
+}
+
+.order_table .white_tr td{
+    color: #FFFFFF;
+}
+
+.order_table .red_tr td{
+    color: #CA5A5A;
+}
+
+.order_table .blue_tr td{
+    color: #188DF0;
+}
+
+.pro_box{
+    width: 3rem;
+    height: 0.4rem;
+    background: #213C64;
+    border-radius: 3px;
+    float: right;
+    margin-right: 0.3rem;
+}
+.pro_cont{
+    height: 100%;
+    width: 60%;
+    background: #188DF0;
+    border-radius: 3px;
+}
+.stop_table{
+    margin-top: 1.3rem;
+    width: 100%;
+    text-align: left;
+    color: #ffffff;
+}
+.stop_table thead tr{
+    height: 3.25rem;
+    background: #223253;
+}
+.stop_table tbody tr{
+    height: 3.3rem;
+}
+.stop_table tbody td:nth-child(3),
+.stop_table thead th:nth-child(3){
+    text-align: right;
+    padding-right: 1.3rem;
+}
+.stop_table tbody td:nth-child(1),
+.stop_table thead th:nth-child(1){
+    padding-left: 1.2rem;
+}
+.stop_table .no_1{
+    font-size: 1.5rem;
+    color: #CA5A5A;
+}
+.stop_table .no_2{
+    font-size: 1.5rem;
+    color: #C5AB39;
+}
+.stop_table .no_3{
+    font-size: 1.5rem;
+    color: #61A0A8;
+}
+.chart_h4{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.9rem 0 0 1.1rem;
+}
+.wrap_h4::before {
+    content: '';
+    position: absolute;
+    top: 1.1rem;
+    left: 0;
+    height: 1rem;
+    width: 0.3rem;
+    background-color: #188DF0;
+    display: block;
+    opacity: 0.8;
+    z-index: 15;
+}
+#workshopBar{
+    width: 30.96rem;
+    height: 23.5rem;
+}
+#consumeLine{
+    width: 30.96rem;
+    height: 23.5rem;
+}
+#qualityPie{
+    width: 19.25rem;
+    height: 24.5rem;
+}
+.order_table>thead>tr, .stop_table>thead>tr{
+    background-color: #34384F !important;
+}

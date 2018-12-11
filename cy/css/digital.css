@@ -1,0 +1,583 @@
+*{box-sizing:border-box}
+*{
+    margin:0;
+    padding: 0;
+    line-height: 1.0;
+}
+li{
+    list-style: none;
+}
+body{
+    background-color: #101631;
+    color: #ffffff;
+    font-family: "Microsoft YaHei", tahoma, arial, "Hiragino Sans GB", "\\5b8b体", sans-serif;
+}
+.fl{
+    float: left;
+}
+
+.header{
+    height: 4rem;
+    /*display: flex;
+    align-items: center;*/
+    position: relative;
+}
+.header::after{
+    content: "";
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #2872CE;
+    position: absolute;
+}
+.header-left{
+    height: 4rem;
+    line-height: 4rem;
+    font-size: 1.5rem;
+    padding-left: 3rem;
+    font-weight: normal;
+}
+.content{
+	width: 94.5rem;
+	margin: 0 auto;
+}
+.item-title{
+    font-size: 1.2rem;
+    display: inline-block;
+    position: relative;
+    padding: 0.85rem 0 0 1rem;
+}
+.one-line::before{
+    content: "";
+    position: absolute;
+    width: 0.3rem;
+    height: 1rem;
+    top: 0.95rem;
+    left: 0;
+    background-color: #188DF0;
+    opacity: 0.8;
+}
+.left{
+    width: 23rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+    margin-right: 0.75rem;
+}
+.left, .center, .right{
+    float: left;
+}
+.left>div, .center>div, .right>div{
+    border-radius: 4px;
+}
+.left-top{
+    height: 9.875rem;
+    background-color: #232841;
+    margin-bottom: 0.75rem;
+    position: relative;
+}
+.left-middle{
+    height: 19.15rem;
+    background-color: #232841;
+    margin-bottom: 0.75rem;
+}
+.left-bottom{
+    height: 17.95rem;
+    background-color: #232841;
+}
+.center{
+    width: 43.5rem;
+    margin-top: 0.75rem;
+    margin-right: 0.75rem;
+}
+.time-div{
+    position: absolute;
+    right: 1.5rem;
+    top: 1.1rem;
+    font-size: 0.7rem;
+    padding-left: 0.95rem;
+}
+.time-logo{
+    width: 0.65rem;
+    height: 0.65rem;
+    left: 0;
+    top: 0;
+    position: absolute;
+}
+.center-top{
+    height: 9.9rem;
+    background-color: #232841;
+    border-radius: 4px 4px 0 0 !important;
+    position: relative;
+}
+.center-top::after{
+    content: "";
+    width: 41.5rem;
+    left: 1rem;
+    bottom: 0;
+    position: absolute;
+    background-color: #111731;
+    height: 1.5px;
+}
+.center-top-bigCard{
+    margin-top: 2.025rem;
+    float: left;
+}
+.center-top-bigCard>p:first-child{
+    font-size: 2rem;
+    margin-bottom: 0.525rem;
+}
+.center-top-bigCard>p:last-child{
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+.center-top-first{
+    margin-left: 1.2rem;
+    width: 15.6rem;
+}
+.center-top-second{
+    width: 11.5rem;
+}
+.renWu-div {
+    padding-left: 1rem;
+}
+.renWu-div p {
+    float: left;
+    margin-right: 0.375rem;
+    font-size: 3.25rem;
+}
+
+.first {
+    /* margin-left: 1rem; */
+    background-color: #BA5252 !important;
+    color: #DCA8A8 !important;
+}
+.num-p {
+    width: 3.5rem;
+    height: 4.5rem;
+    background-color: #2285FF;
+    border-radius: 5px;
+    line-height: 4.5rem;
+    text-align: center;
+}
+.renWu-div{
+    margin-top: 0.75rem;
+}
+.renWu-div div {
+    float: left;
+}
+.dom-div {
+    margin-left: 0.125rem;
+    margin-right: 0.1rem;
+}
+.dom-div span {
+    display: inline-block;
+    font-size: 3.25rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    text-align: center;
+}
+
+.center-bottom{
+    height: 38.6rem;
+    background-color: #232841;
+    position: relative;
+    padding-top: 0.75rem;
+    border-radius: 0 0 4px 4px !important;
+}
+.center-bottom-card{
+
+}
+.chart-map{
+    margin-top: 0.375rem;
+    width: 39.25rem;
+    height: 30.875rem;
+}
+
+.card-item{
+    width: 18rem;
+    height: 7.25rem;
+    margin-left: 1rem;
+    margin-top: 1.125rem;
+    padding-top: 1.125rem;
+    padding-left: 1.25rem;
+    float: left;
+    background-color: #34384F;
+    border-radius: 5px;
+    position: relative;
+}
+.card-one{
+    margin-right: 0.25rem;
+}
+.card-item>div:first-child{
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+}
+.card-item>div:last-child{
+    font-size: 2.5rem;
+    line-height: 2rem;
+}
+.card-item>div:last-child>span{
+    font-size: 1.2rem !important;
+}
+.card-item>img{
+    width: 5.15rem;
+    height: 3.75rem;
+    right: 1rem;
+    top: 1.625rem;
+    position: absolute;
+}
+.right{
+    width: 26.5rem;
+    margin-top: 0.75rem;
+}
+.right-top{
+    height: 9.9rem;
+    background-color: #232841;
+    margin-bottom: 0.75rem;
+}
+.right-card-content{
+    margin-top: 1.85rem;
+    padding-left: 1rem;
+}
+.right-top-card{
+    height: 1.3rem;
+    float: left;
+}
+
+.right-top-card:nth-child(2n+1){
+    width: 12.925rem;
+}
+.right-top-card:nth-child(-n+2){
+    margin-bottom: 1.75rem;
+}
+.right-top-card:nth-child(2)>p{
+    width: 4.25rem;
+}
+.right-top-card>p{
+    font-size: 0.9rem;
+    opacity: 0.8;
+    padding-right: 0.65rem;
+    float: left;
+    padding-top: 0.35rem;
+}
+.right-top-card>div{
+    float: left;
+    height: 1.3rem;
+}
+.right-top-card>div>span:first-child{
+    font-size: 1.3rem;
+    color: #CE8269;
+}
+.right-top-card>div>span:last-child{
+    font-size: 1rem;
+}
+.right-middle{
+    height: 17.6rem;
+    background-color: #232841;
+    margin-bottom: 0.75rem;
+}
+.table-head {
+    height: 2.25rem;
+    background-color: #4F5367;
+    padding: 0 0 0 1.1rem;
+    margin-top: 1.775rem;
+    font-size: 0.9rem;
+}
+
+.table-head>p {
+    height: 100%;
+    float: left;
+    line-height: 2.25rem;
+}
+.cell-jdt{
+    width: 7.6rem;
+    height: 0.5rem;
+    background-color: #010101;
+    border-radius: 1.25rem;
+    top: 1.125rem;
+    left: 14rem;
+    position: absolute;
+}
+.cell-jd{
+    width: 1rem;
+    height: 0.5rem;
+    top: 0;
+    left: 0;
+    border-radius: 1.25rem;
+    background-color: #47A7CC;
+    position: absolute;
+}
+.table-body-li {
+    position: relative;
+    padding-left: 1.1rem;
+}
+.table-body-li>p {
+    float: left;
+    height: 2.75rem;
+    line-height: 2.75rem;
+    font-size: 1rem;
+}
+.head-cell-one{
+    width: 2rem;
+}
+.cell-one{
+    width: 2rem;
+    float: left;
+    height: 2.75rem;
+    line-height: 2.75rem;
+    font-size: 1rem;
+}
+.table-efficient .cell-two{
+    width: 9.4rem;
+    padding-left: 1.4rem;
+    margin-right: 1.5rem;
+    text-align: left;
+}
+.table-efficient .cell-three{
+    width: 11.825rem;
+    color: #D0D1D7;
+    font-size: 0.85rem;
+    padding-left: 8rem;
+    text-align: left;
+}
+.table-efficient .cell-four{
+    text-align: right;
+    width: 4.6rem;
+}
+.table-efficient .cell-five{
+    text-align: right;
+    width: 9.35rem;
+}
+.topLogo{
+    width: 1rem;
+    height: 1rem;
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+}
+.NoThree{
+    width: 1rem;
+    height: 1rem;
+    font-size: 0.75rem !important;
+    line-height: 1rem;
+    text-align: center;
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: #353E67;
+    color: #4B5B97;
+}
+.color5A{
+    color: #9D4C53;
+}
+.colorC5{
+    color: #A5913B;
+}
+.color91{
+    color: #749D91;
+}
+.colorff{
+    color: #fff;
+    opacity: 0.8;
+}
+
+.right-bottom{
+    height: 19.5rem;
+    background-color: #232841;
+    position: relative;
+}
+
+
+
+.clearFix{
+    zoom: 1;
+}
+.clearFix:after{
+    clear: both;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+/*.header>div, .header>img{
+    float: left;
+}*/
+.header{
+    line-height: 4.2rem;
+}
+.header-left{
+    float: left;
+    padding-left: 0;
+}
+.head-logo{
+    float: left;
+    width: 2.65rem;
+    height: 2.65rem;
+    display: inline-block;
+    margin-left: 3.2rem;
+    margin-right: 1rem;
+    margin-top: 0.65rem;
+    background-image: url('../img/logo.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bar-chart{
+    width: 26.5rem;
+    height: 17.025rem;
+    /*border: 1px solid red;*/
+}
+.chart-pie{
+    width: 26.5rem;
+    height: 11rem;
+    position: absolute;
+    top: 2.5rem;
+    /*border: 1px solid red;*/
+}
+.chart-pie-cost{
+
+}
+.sale-div {
+    margin-top: 13.2rem;
+}
+.sale-item {
+    float: left;
+    margin-left: 0.75rem;
+    padding-left: 1rem;
+    padding-top: 0.75rem;
+    width: 12.125rem;
+    height: 5rem;
+    background-color: #34384F;
+    border-radius: 5px;
+}
+.sale-item>p:first-child {
+    margin-bottom: 0.525rem;
+    font-size: 1rem;
+}
+.sale-item>p:last-child {
+    color: #CA5A5A;
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+.left-top>div{
+    padding-left: 1rem;
+}
+.left-top-card-one{
+    width: 13.65rem;
+}
+.left-top-card{
+    margin-top: 2.025rem;
+    float: left;
+}
+.left-top-card>p:first-child{
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+.left-top-card>p:last-child{
+    font-size: 0.9rem;
+    color: #fff;
+    opacity: 0.8;
+}
+.pie-left{
+    width: 23rem;
+    height: 15.9rem;
+    /*border: 1px solid red;*/
+}
+.colorCE{
+    color: #CE8269;
+    font-weight: bold;
+}
+.bottom-card{
+    padding-top: 2.075rem;
+    padding-left: 1rem;
+}
+.bottom-card>div{
+    padding-left: 1rem;
+    width: 9.475rem;
+    float: left;
+}
+.bottom-card>div:first-child{
+    border-right: 1px solid #111731;
+}
+.bottom-card>div>div{
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+.bottom-card>div>p{
+    opacity: 0.8;
+    font-size: 1.125rem;
+}
+.bottom-card .span-yuan{
+    font-size: 1rem;
+}
+.increase-icon::after{
+    content: "";
+    position: absolute;
+    width: 0.9rem;
+    height: 1.25rem;
+    top: 0.65rem;
+    right: -1.3rem;
+    background-image: url("../img/increaseLogo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.middle-bigCard{
+    margin-top: 2.35rem;
+    text-align: center;
+    border-bottom: 1px solid #111731;
+}
+.middle-bigCard>p:first-child{
+    font-size: 3.5rem;
+    color: #CA5A5A;
+    margin-bottom: 0.55rem;
+}
+.middle-bigCard>p:last-child{
+    font-size: 1.125rem;
+    padding-bottom: 1rem;
+}
+.chart-pie-cost{
+    width: 26.5rem;
+    height: 15.55rem;
+    /*border: 1px solid red;*/
+}
+.chart-pie-sale{
+    width: 26.5rem;
+    height: 17.45rem;
+    /*border: 1px solid red;*/
+}
+
+.cell-jd--7 {
+    width: 0.532rem;
+}
+.cell-jd--8 {
+    width: 0.608rem;
+}
+.cell-jd--9 {
+    width: 0.684rem;
+}
+.cell-jd--11 {
+    width: 0.836rem;
+}
+.cell-jd--12 {
+    width: 0.921rem;
+}
+.cell-jd--13 {
+    width: 0.988rem;
+}
+.header_right {
+    float: right;
+    height: 4rem;
+    display: inline-block;
+    line-height: 4rem;
+    padding-right: 1rem;
+}
+.header_right span {
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+.table-head{
+    background-color: #34384F !important;
+}

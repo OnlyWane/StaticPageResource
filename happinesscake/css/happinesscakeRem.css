@@ -1,0 +1,286 @@
+/* 清除 */
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,dl,dt,dd,input{margin: 0;padding: 0;}
+img{border: none;}
+li{list-style: none;}
+input,select,textarea{outline: none;border:none;background:none;}
+textarea{resize: none;}
+a{text-decoration: none;color: #656565;}
+table {border-collapse: collapse; border-spacing: 0;margin: 0;padding: 0;border: 0;}
+body{
+    background-color: #101631;
+    line-height: 1;
+}
+.container{
+    width: 100%;
+    padding: 0;
+    font-family: "PingFangSC-Regular","Mircosoft YaHei","微软雅黑";
+}
+.header{
+    line-height: 4.2rem;
+    background-color: #232841;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: normal;
+    overflow: hidden;
+}
+.hr_2{
+    height: 0.1rem;
+    background: linear-gradient(to right, #177BF4, #6472FF);
+}
+.header_left{
+    padding-left: 2rem;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+.header_left h3{
+    font-size: 1.5rem;
+    line-height: 4.2rem;
+}
+.logo{
+    width: 2.65rem;
+    height: 2.65rem;
+    background: url(../image/logo.png) center center no-repeat;
+    background-size: cover;
+    margin-right: 0.7rem;
+    margin-top: 0.4rem;
+}
+.header_right{
+    float: right;
+    padding-right: 1rem;
+}
+.header_right span{
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+.content{
+    width: 94.4rem;
+    margin: 0 auto;
+    overflow: hidden;
+}
+h4{
+    font-size: 1.125rem;
+    line-height: 1.125rem;
+    padding-top: 0.9rem;
+    color: #ffffff;
+    padding-left: 1.1rem;
+    font-weight: lighter;
+    position: relative;
+    display: inline-block;
+}
+.top{
+    margin: 0.75rem 0;
+    overflow: hidden;
+}
+.top_left{
+    width: 27.5rem;
+    height: 16.05rem;
+    float: left;
+    margin-right: 0.75rem;   
+    background: #232841;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    color: #D7D8DC;
+    font-size: 1.05rem;
+}
+.account{
+    float: left;
+    margin-right: 0.75rem; 
+    margin-left: 1rem; 
+}
+.top_left h4{
+    margin-bottom: 0.9rem;
+    padding-left: 0;
+}
+.account_item{
+    background: #393D54;
+    border-radius: 4px 4px 0 0;
+    width: 12.35rem;
+    height: 6.1rem;
+}
+.account_item p{
+    padding-left: 1rem;
+    line-height: 2rem;
+}
+.account_item:last-child{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 0.15rem;
+    border-radius: 0 0 4px 4px;
+}
+.balance{
+    font-size: 2rem;
+    color: #CE8269;
+    line-height: 2rem; 
+    padding-top: 1.2rem;
+    font-weight: bold;
+}
+.top_left .number{
+    font-size: 1.5rem;
+    color: #FFFFFF;
+    margin-left: 1.35rem;
+    margin-bottom: 0.5rem;
+}
+.income{
+    float: left;
+}
+.flex_box{
+    background: #393D54;
+    border-radius: 4px;
+    width: 11.1rem;
+    height: 8.65rem;
+    padding: 1.8rem 0 1.8rem 0.55rem;
+    overflow: hidden;
+}
+.flex_item{
+    height: 8.65rem;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+}
+.income .flex_item .number{
+    margin-left: 0;
+}
+.top_left .income .flex_item:first-child{
+    margin-right: 0.8rem;
+}
+.up{
+    font-size: 1.5rem;
+    color: #CA5A5A;
+}
+.top_right{
+    width: 66.15rem;
+    height: 16.05rem;
+    background: #232841;
+    border-radius: 8px;
+    float: right;
+}
+.bar_cont{
+    margin-top: 0.8rem;
+    margin-left: 2rem;
+    overflow: hidden;
+}
+.bar_item{
+    width: 21rem;
+    float: left;
+    position: relative;
+}
+.bottom{
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+}
+.bottom_left{
+    width: 27.5rem;
+    height: 31.65rem;
+    float: left;
+    margin-right: 0.75rem;   
+    background: #232841;
+    border-radius: 8px;
+}
+.new_pro{
+    overflow: hidden;
+    position: relative;
+    width: 27.5rem;
+    height: 15.5rem;
+}
+.new_price{
+    width: 27.5rem;
+    height: 15rem;
+    position: relative;
+}
+.new_price h5{
+    padding-left: 1.2rem; 
+}
+.bottom_right{
+    float: right;
+}
+.bottom_right_small{
+    width: 66.15rem;
+    height: 14.2rem;
+    background: #232841;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    position: relative;
+}
+.bottom_right_big{
+    width: 66.15rem;
+    height: 16.75rem;
+    background: #232841;
+    border-radius: 8px;
+    position: relative;
+}
+.to{
+    position: absolute;
+    width: 1.75rem;
+    height: 0.55rem;
+    top: 8.7rem;
+    left: 8.65rem;
+    margin-right: 1.5rem;
+    background: url(../image/to.png) center center no-repeat;
+    background-size: cover;
+}
+.chart_h4{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.9rem 0 0 1.1rem;
+}
+.wrap_h4::before {
+    content: '';
+    position: absolute;
+    top: 1.1rem;
+    left: 0;
+    height: 1rem;
+    width: 0.3rem;
+    background-color: #188DF0;
+    display: block;
+    opacity: 0.8;
+    z-index: 15;
+}
+h5{
+    font-size: 1.05rem;
+    color: #FFFFFF;
+    position: absolute;
+    padding: 0;
+    font-weight: lighter;
+}
+#areaBar{
+    width: 18rem;
+    height: 13rem;
+
+}
+#cityBar{
+    width: 18rem;
+    height: 13rem;
+}
+#kindBar{
+    width: 18rem;
+    height: 13rem;
+}
+#comparePie{
+    width: 10.5rem;
+    height: 13.2rem;
+    float: left;
+}
+#newPie{
+    width: 17rem;
+    height: 13.2rem; 
+    float: right;
+}
+#priceTendencyLine{
+    width: 65rem;
+    height: 13rem;
+}
+#taskTendencyBar{
+    width: 65rem;
+    height: 15.5rem;
+}
+#pirceBar{
+    width: 25.5rem;
+    height: 15rem;
+    padding-top: 1.1rem;
+}

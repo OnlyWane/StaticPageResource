@@ -1,0 +1,272 @@
+/* 清除 */
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,dl,dt,dd,input{margin: 0;padding: 0;}
+img{border: none;}
+li{list-style: none;}
+input,select,textarea{outline: none;border:none;background:none;}
+textarea{resize: none;}
+a{text-decoration: none;color: #656565;}
+table {border-collapse: collapse; border-spacing: 0;margin: 0;padding: 0;border: 0;}
+body{
+    background-color: #101631;
+    line-height: 1;
+}
+.container{
+    width: 100%;
+    padding: 0;
+    font-family: "PingFangSC-Regular","Mircosoft YaHei","微软雅黑";
+}
+.header{
+    line-height: 84px;
+    background-color: #232841;
+    color: #fff;
+    font-size: 24px;
+    font-weight: normal;
+    overflow: hidden;
+}
+.hr_2{
+    height: 2px;
+    background: linear-gradient(to right, #177BF4, #6472FF);
+}
+.header_left{
+    padding-left: 40px;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+.header_left h3{
+    font-size: 30px;
+    line-height: 84px;
+}
+.logo{
+    width: 60px;
+    height: 58px;
+    background: url(../image/logo.png) center center no-repeat;
+    background-size: cover;
+    margin-right: 10px;
+}
+.header_right{
+    float: right;
+    padding-right: 20px;
+}
+.header_right span{
+    display: inline-block;
+    margin-right: 10px;
+}
+.content{
+    width: 1887px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+h4{
+    font-size: 22.5px;
+    line-height: 22.5px;
+    padding-top: 24px;
+    color: #ffffff;
+    padding-left: 22px;
+    font-weight: lighter;
+    position: relative;
+    display: inline-block;
+}
+.top{
+    margin-top: 15px;
+    overflow: hidden;
+}
+.top_item{
+    width: 619px;
+    height: 170px;
+    float: left;
+    margin-right: 15px; 
+    background: #232841;  
+    border-radius: 8px;
+}
+.top_item:last-child{
+    margin-right: 0;
+}
+.amount{
+    float: left;
+    margin-right: 62px;
+}
+.sum{
+    color: #CA5A5A;
+    font-size: 60px;
+    font-weight: bold;
+    margin-top: 35px;
+    margin-left: 22px;
+}
+.proportion{
+    float: left;
+    font-size: 50px;
+    color: #ffffff;
+    text-align: center;
+}
+.proportion:last-child{
+    margin-left:40px;
+}
+.proportion h4{
+    padding-left: 0;
+}
+.proportion p{
+    margin-top: 40px;
+}
+.center{
+    margin: 15px 0; 
+    overflow: hidden;
+}
+.percent{
+    font-size: 25px;
+    margin-right: 5px;
+}
+.up{
+    font-size: 25px;
+    color: #C23531;
+}
+.down{
+    font-size: 25px;
+    color: #64C865;
+}
+.top_middle{
+    width: 379px;
+    padding: 0 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background: #271E36;
+}
+.flex-item .sum{
+    margin-left: 0;
+}
+.flex-item h4{
+    padding-top: 0;
+    padding-left: 0;
+} 
+.flex-item p{
+    font-size: 60px;
+    margin-top: 20px;
+}
+.num{
+    color: #ffffff;
+    font-weight: bold;
+}
+.split{
+    height: 82px;
+    width: 2px;
+    background: #ffffff;
+    position: absolute;
+    margin: auto;
+    left: 264px;
+    top: 0;
+    bottom: 0;
+}
+.center_left{
+    width: 936px;
+    height: 385px;
+    float: left;
+    margin-right: 15px;
+    background: #232841; 
+    border-radius: 8px;
+}
+.center_right{
+    width: 936px;
+    height: 385px;
+    float: right;
+    background: #232841; 
+    border-radius: 8px;
+}
+.stock_table{
+    margin-top: 20px;
+    width: 100%;
+    font-size: 20px;
+    color: #FBFBFC;
+}
+.stock_table thead tr{
+    height: 64px;
+    background: #213C64;
+}
+.stock_table tbody tr{
+    height: 64px;
+    text-align: center;
+}
+.stock_table tbody tr:nth-child(even){
+    background: #2A2F47;
+}
+.stock_table tbody tr:nth-child(odd){
+    background: #343950;
+}
+.stock_table td:nth-child(1),
+.stock_table th:nth-child(1){
+    width: 144px;
+    text-align: left;
+    text-indent: 30px;
+}
+
+.bottom{
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+.bottom_item{
+    width: 619px;
+    height: 385px;
+    float: left;
+    margin-right: 15px;
+    background: #232841; 
+    border-radius: 8px;
+}
+.rank_table{
+    margin-top: 20px;
+    width: 100%;
+    color: #ffffff;
+    text-align: left;
+    font-size: 18px;
+}
+.rank_table thead tr{
+    height: 50px;
+    background: #4F5367;
+}
+.rank_table tbody tr{
+    height: 53px;
+}
+.rank_table tbody .red{
+    color: #CA5A5A;
+}
+.rank_table tbody .yellow{
+    color: #A08D41;
+}
+.rank_table tbody .green{
+    color: #91C7AE;
+}
+.rank_table .fs_big{
+    font-size: 25px;
+}
+.rank_table td:nth-child(1),
+.rank_table th:nth-child(1){
+    width: 150px;
+    text-indent: 26px;
+}
+.rank_table tbody tr:nth-child(even){
+    background: #343950;
+}
+.rank_table tbody tr:nth-child(odd){
+    background: #2A2F47;
+}
+.bottom_item:last-child{
+    margin-right: 0;
+}
+#tendency_line{
+    width: 914px;
+    height: 360px;
+    padding-top: 24px;
+    padding-left: 22px;
+}
+#customer_bar{
+    width: 594px;
+    height: 360px;
+    padding-top: 24px;
+    padding-left: 22px;
+}
+#organization_bar{
+    width: 594px;
+    height: 360px;
+    padding-top: 24px;
+    padding-left: 22px;
+}

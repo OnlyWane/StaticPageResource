@@ -1,0 +1,223 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8">
+    <title>金蝶云运营</title>
+    <script>
+        var setPro = 1;
+        (function(doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function() {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    setPro = clientWidth / 960;
+                    docEl.style.fontSize = 10 * (clientWidth / 960) + 'px';
+                };
+                recalc();
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+    <link rel="stylesheet" type="text/css" href="css/digital.css">
+</head>
+
+<body>
+    <div class="container" id="app">
+        <div class="header">
+            <div class="head-logo"></div>
+            <h3 class="header-left">金蝶云运营看板</h3>
+            <div class="header_right">
+                <span id="date"></span><span id="time"></span>
+            </div>
+        </div>
+        <div class="content clearFix">
+            <div class="left ">
+                <!-- 客户数  -->
+                <!-- <div class="left-top"></div> -->
+                <!--  客户增长  -->
+                <div class="left-middle">
+                    <p class="item-title one-line">客户每月增长</p>
+                    <div class="bar-chart" id="bar-one">
+                    </div>
+                </div>
+                 <!--  用户应用分布  -->
+                <div class="left-bottom">
+                    <p class="item-title one-line">用户应用分布 </p>
+                    <div class="pie-chart" id="pie-one">
+                    </div>
+                </div>
+            </div>
+            <div class="center ">
+                <!-- 用户数  -->
+                <div class="center-top"></div>
+                <!-- 活跃用户看板  -->
+                <div class="center-bottom"></div>
+            </div>
+            <div class="right ">
+                <!-- 活跃用户Top  -->
+                <div class="right-top"></div>
+                <!-- 即将到期客户  -->
+                <div class="right-bottom"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript" src="./js/jquery.min.js"></script>
+<script type="text/javascript" src="./js/echarts.min.js"></script>
+<script type="text/javascript" src="./js/china.js"></script>
+<script type="text/javascript" src="./js/template-web.js"></script>
+<!-- 用户数模板  -->
+<script id="tpl-UsersAndCustomers" type="text/html">
+	<div class="">
+		<p>{{$imports.formatNum(TotalCustomers.value)}}</p>
+		<p>客户数</p>
+	</div>
+	<div class="">
+		<p>{{$imports.formatNum(TotalUsers.value)}}</p>
+		<p>用户数</p>
+	</div>
+</script>
+<!-- 活跃用户看板  -->
+<script id="tpl-UserDistribution" type="text/html">
+    <div class="chart-map" id="map-zoomData"></div>
+    <ul class="center-bottom-card clearFix">
+        <li class="card-item card-one">
+            <div>当前在线</div>
+            <img src="./img/peopleLogo.png"></img>
+            <div id="curOnline">{{$imports.formatNum(currentonline)}}<span>人</span></div>
+        </li>
+        <li class="card-item">
+            <div>月活用户</div>
+            <img src="./img/peopleLogo.png"></img>
+            <div>{{$imports.formatNum(monthMAU)}}<span>人</span></div>
+        </li>
+    </ul>
+
+</script>
+<!-- 活跃用户Top  -->
+<script id="tpl-MAU" type="text/html">
+    <div>
+        <p class="item-title one-line">活跃用户排行</p>
+        <div class="test">
+            示例
+        </div>
+    </div>
+    <ul class="table-efficient">
+        <div class="table-head">
+            {{each feilds value i}}
+                <p class="cell-{{i+1}}">{{value}}</p>
+            {{/each}}
+        </div>
+        {{each data value i}}
+            <li class="table-body-li clearFix color{{i+1}}">
+                <p class="cell-1">
+                    <img class="topLogo" src="./img/top{{i+1}}.png" alt="">
+                </p>
+                {{each value item j}}
+                    <p class="cell-{{j+2}}">{{item}}</p>
+                {{/each}}
+            </li>
+        {{/each}}
+    </ul>
+</script>
+<!-- 即将到期客户  -->
+<script id="tpl-ExpiringCustoms" type="text/html">
+    <div>
+        <p class="item-title one-line">即将到期客户</p>
+        <div class="test">
+            示例
+        </div>
+    </div>
+
+    <ul class="table-over">
+        <div class="table-over-head">
+            <p class="">企业名称</p>
+            <p class="">到期日期</p>
+        </div>
+        <div class="" id="slide">
+            <div id="slide1">
+                {{each $data value i}}
+                    <li class="table-over-body-li clearFix">
+                        <p class="">{{value.company}}</p>
+                        <p class="">{{value.expireddate}}</p>
+                    </li>
+                {{/each}}
+                <!-- {{each $data value i}}
+                    <li class="table-over-body-li clearFix">
+                        <p class="">{{value.company}}</p>
+                        <p class="">{{value.expireddate}}</p>
+                    </li>
+                {{/each}} -->
+            </div>
+            <div id="slide2"></div>
+        </div>
+
+    </ul>
+</script>
+<script type="text/javascript" src="./js/digital.js"></script>
+<script type="text/javascript">
+function timeController() {
+        function _paddNum(num){
+          num += "";
+          return num.replace(/^(\d)$/,"0$1");
+        }
+
+        function _time() {
+            clearTimeout(timer);//清除定时器
+            date = new Date()
+            var cfg = {
+               yyyy : date.getFullYear() //年 : 4位
+              ,MM : _paddNum(date.getMonth() + 1) //月 : 如果1位的时候补0
+              ,dd : _paddNum(date.getDate())//日 : 如果1位的时候补0
+              ,hh : _paddNum(date.getHours())  //时
+              ,mm : _paddNum(date.getMinutes()) //分
+              ,ss : _paddNum(date.getSeconds()) //秒
+            }
+            $('.time_head').text('最近数据更新时间：');
+            $('#date').text(cfg.yyyy+"-"+cfg.MM+"-"+cfg.dd)
+            $("#time").text(cfg.hh+":"+cfg.mm+":"+cfg.ss)
+            timer = setTimeout(_time,1000); //设定定时器，循环运行
+        }
+
+        var timer = setTimeout(_time,100);
+    }
+timeController();
+</script>
+<script type="text/javascript">
+
+var speed=20;
+
+// console.log(slide);
+function Marquee(){
+    if(slide2.offsetTop-slide.scrollTop<=0)
+        slide.scrollTop-=slide1.offsetHeight;
+    else{
+        slide.scrollTop++;
+    }
+}
+function isOverFlow(parent, child){
+    // console.log(slide.offsetHeight, slide1.offsetHeight);
+    return parent.offsetHeight>child.offsetHeight ? false : true;
+    debugger
+}
+
+setTimeout(
+function(){
+    var slide=document.getElementById("slide");
+    var slide2=document.getElementById("slide2");
+    var slide1=document.getElementById("slide1");
+    if(isOverFlow(slide, slide1)){
+        slide2.innerHTML=slide1.innerHTML;
+    }
+    setInterval(Marquee,speed)},1000);
+// var MyMar=setInterval(Marquee,speed);
+// slide.onmouseover=function(){clearInterval(MyMar)};
+// slide.onmouseout=function(){MyMar=setInterval(Marquee,speed)};
+
+</script>
+</html>

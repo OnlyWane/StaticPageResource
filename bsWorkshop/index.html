@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>达中集团车间管理看板</title>
+    <script>
+    var setPro = 1;
+        (function(doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function() {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    setPro = clientWidth / 960;
+                    docEl.style.fontSize = 10 * (clientWidth / 960) + 'px';
+                };
+                recalc();
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <link rel="stylesheet" href="css/bsWorkshopRem.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+          <div class="header_left">
+            <div class="logo"></div>
+            <h3>达中集团车间管理看板</h3>
+          </div>
+          <div class="header_right">
+            <span id="date"></span><span id="time"></span>
+          </div>
+        </div>
+        <div class="hr_2"></div>
+        <div class="content">
+            <div class="top">
+                <div class="top_left">
+                	<div class="top_left_small">
+                		<h4 class="wrap_h4">车间概览</h4>
+                		<div class="top_left_item_cont">
+                			<div class="cont_left">
+                				<p><span class="plan" Id =“plan”>6,324</span>/<span class="achieve">866</span></p>
+                				<p class="small_fs">计划/已完成</p>
+                			</div>
+                			<div class="cont_right">
+                				<p><span class="delay">56</span></p>
+                				<p class="small_fs">拖期</p>
+                			</div>
+                		</div>
+                	</div>
+                	<div class="top_left_big">
+                        <h4 class="chart_h4 wrap_h4">备料及时率</h4>
+                		<div id="timeliness"></div>
+                	</div>
+                </div>
+                <div class="top_middle">   
+                	<div class="top_middle_small">
+                		<h4 class="wrap_h4">产线生产进度</h4>
+                		<ul class="progress_color">
+                			<li><span class="green"></span>正常生产</li>
+                			<li><span class="red"></span>异常报警</li>
+                			<li><span class="gray"></span>空闲</li>
+                		</ul>
+                		<div class="progress_cont">
+                			<div class="progress_item green">
+                				<span class="num_line">电机1线</span>
+                				<span class="split"></span>
+                				<span class="pro_percent">电机 A08NA<br>完成率<span class="percent">98%</span></span>
+                			</div>
+                			<div class="progress_item red">
+                				<span class="num_line">电机2线</span>
+                				<span class="split"></span>
+                				<span class="pro_percent">电机 803J7<br>完成率<span class="percent">85%</span></span>
+                			</div>
+                			<div class="progress_item gray">
+                				<span class="num_line">电机3线</span>
+                				<span class="split"></span>
+                				<span class="pro_percent">完成率</span>
+                			</div>
+                		</div>
+                	</div>
+                	<div class="top_middle_big">
+                        <h4 class="chart_h4 wrap_h4">车间资源率分析</h4>
+                		<div id="resourceAnalysis"></div>
+                	</div>
+                </div>
+                <div class="top_right">
+                	<div class="top_right_small">
+                		<h4 class="wrap_h4">今日达人</h4>
+                		<table class="master_list">
+                			<thead>
+                				<tr>
+                					<th>排名</th>
+                					<th>人员</th>
+                					<th>完成率</th>
+                					<th>合格率</th>
+                					<th>综合效率</th>
+                				</tr>
+                			</thead>
+                			<tbody>
+                				<tr>
+                					<td class="td_red">NO.1</td>
+                					<td>李振华</td>
+                					<td>99%</td>
+                					<td>95%</td>
+                					<td><span class="pro_icon pro_64"></span>94%</td>
+                				</tr>
+                				<tr>
+                					<td class="td_yellow">NO.2</td>
+                					<td>张桐</td>
+                					<td>96%</td>
+                					<td>94%</td>
+                					<td><span class="pro_icon pro_56"></span>90%</td>
+                				</tr>
+                				<tr>
+                					<td class="td_green">NO.3</td>
+                					<td>段轶</td>
+                					<td>96%</td>
+                					<td>92%</td>
+                					<td><span class="pro_icon pro_78"></span>88%</td>
+                				</tr>
+                			</tbody>
+                		</table>
+                	</div>
+                	<div class="top_right_big">
+                        <h4 class="chart_h4 wrap_h4">异常趋势</h4>
+                		<div id="abnormalTendency"></div>
+                	</div>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="bottom_left">
+                    <h4 class="wrap_h4">工序进度</h4>
+                    <table class="progress_table">
+                    	<thead>
+                    		<tr>
+                    			<th class="small_td">产线</th>
+                    			<th class="small_td">工单</th>
+                    			<th class="xbig_td">产品</th>
+                    			<th class="big_td ">计划数量</th>
+                    			<th class="big_td center">开工时间</th>
+                    			<th class="xbig_td center">工序1</th>
+                    			<th class="middle_td center">工序2</th>
+                    			<th class="middle_td center">工序3</th>
+                    			<th class="middle_td center">状态</th>
+                    			<th class="xbig_td center">异常持续时间</th>
+                    			<th class="small_td center">合格率</th>
+                    			<th class="big_td center">发抖状态</th>
+                    			<th class="big_td right">欠料套数</th>
+                    		</tr>
+                    	</thead>
+                    	<tbody>
+                    		<tr>
+                    			<td>电机1线</td>
+                    			<td>MO0153</td>
+                    			<td>电机 A08NA</td>
+                    			<td>300</td>
+                    			<td class="center">2017.11.18</td>
+                    			<td class="center">98%</td>
+                    			<td class="center">98%</td>
+                    			<td class="center">98%</td>
+                    			<td class="center">正常生产</td>
+                    			<td class="center"></td>
+                    			<td class="center">96%</td>
+                    			<td class="completed center">完成</td>
+                    			<td class="right"></td>
+                    		</tr>
+                    		<tr>
+                    			<td>电机2线</td>
+                    			<td>MO0154</td>
+                    			<td>电机 803J7</td>
+                    			<td>200</td>
+                    			<td class="center">2017.11.20</td>
+                    			<td class="center"><span class="pro_icon pro_78">89%</span></td>
+                    			<td class="center"><span class="pro_icon pro_64">89%</span></td>
+                    			<td class="center"><span class="pro_icon pro_80">85%</span></td>
+                    			<td class="center">异常报警</td>
+                    			<td class="uncompleted center delay_second">1200秒</td>
+                    			<td class="center">93%</td>
+                    			<td class="uncompleted center">未完成</td>
+                    			<td class="right">2</td>
+                    		</tr>
+                    		<tr>
+                    			<td>电机4线</td>
+                    			<td>MO0155</td>
+                    			<td>电机 4311</td>
+                    			<td>100</td>
+                    			<td class="center">2017.11.21</td>
+                    			<td class="center">97%</td>
+                    			<td class="center">97%</td>
+                    			<td class="center">97%</td>
+                    			<td class="center">正常生产</td>
+                    			<td class="center"></td>
+                    			<td class="center">92%</td>
+                    			<td class="completed center">完成</td>
+                    			<td class="right"></td>
+                    		</tr>
+                    	</tbody>
+                    </table>
+                </div>
+                <div class="bottom_right">
+                    <h4 class="chart_h4 wrap_h4">缺陷分析</h4>
+                   <div id="defectAnalysis"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="js/echartOption.js"></script>
+<script type="text/javascript">
+    $(function(){
+        function timeController() {
+            function _paddNum(num){
+              num += "";
+              return num.replace(/^(\d)$/,"0$1");
+            }
+
+            function _time() {
+                clearTimeout(timer);//清除定时器
+                date = new Date()
+                var cfg = {
+                   yyyy : date.getFullYear() //年 : 4位
+                  ,MM : _paddNum(date.getMonth() + 1) //月 : 如果1位的时候补0
+                  ,dd : _paddNum(date.getDate())//日 : 如果1位的时候补0
+                  ,hh : _paddNum(date.getHours())  //时
+                  ,mm : _paddNum(date.getMinutes()) //分
+                  ,ss : _paddNum(date.getSeconds()) //秒
+                }
+                $('.time_head').text('最近数据更新时间：');
+                $('#date').text(cfg.yyyy+"-"+cfg.MM+"-"+cfg.dd)
+                $("#time").text(cfg.hh+":"+cfg.mm+":"+cfg.ss)
+                timer = setTimeout(_time,1000); //设定定时器，循环运行
+            }   
+
+            var timer = setTimeout(_time,0); 
+        }
+        timeController();
+        function formatter(val){
+            return  val.slice(0,1) + ',' + val.slice(1);
+        }
+        function setAchieve(){
+            var num = parseInt($(".achieve").text().replace(',',''));
+            if(num<996){
+                $(".achieve").text((num + 4).toString());
+            }else if(num>=996 && num<6320){
+                $(".achieve").text(formatter((num + 4).toString()));
+            }else if(num>=6321 && num<6324){
+                $(".achieve").text(formatter('6324'));
+            }else{
+                $(".achieve").text('866');
+            }
+        }
+        function setDelaySecond(){
+            var second = parseInt($(".delay_second").text());
+            $(".delay_second").text((second + 5).toString() + '秒');
+        }
+        
+        setInterval(setAchieve,5000);
+        setInterval(setDelaySecond,5000);
+    })
+</script>
